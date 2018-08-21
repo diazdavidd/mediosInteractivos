@@ -51,6 +51,7 @@ function setup() {
 
   
   //lineas que conforman el cuadro
+  stroke(0);
   line(0,399,22,383);
   line(0,435,130,437);
   line(0,463,137,469);
