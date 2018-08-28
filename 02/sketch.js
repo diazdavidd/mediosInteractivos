@@ -12,7 +12,7 @@ var y4 = 25;
 
 function setup() 
 {
-  createCanvas(600, 600);
+  createCanvas(110, 110);
   background(220);
   fill(0);
 noStroke();
