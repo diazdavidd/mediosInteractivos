@@ -14,7 +14,7 @@
 	var abd= 0;
  	var abd2= 0;
 function setup() {
-  createCanvas(400, 400);
+  createCanvas(1200, 1200);
 }
 
 function draw() {
@@ -23,115 +23,115 @@ function draw() {
   //Estrellitas titilando intervalo 1
   fill(par);
   beginShape();
-  vertex(20, 20);
-  vertex(30, 18);
-  vertex(32, 8);
-  vertex(34, 18);
-  vertex(44, 20);
-  vertex(34, 22);
-  vertex(32, 32);
-  vertex(30,22);
+  vertex(20*width/400, 20*height/400);
+  vertex(30*width/400, 18*height/400);
+  vertex(32*width/400, 8*height/400);
+  vertex(34*width/400, 18*height/400);
+  vertex(44*width/400, 20*height/400);
+  vertex(34*width/400, 22*height/400);
+  vertex(32*width/400, 32*height/400);
+  vertex(30*width/400, 22*height/400);
   endShape(CLOSE);
   
     beginShape();
-  vertex(20-10, 20+170);
-  vertex(30-10, 18+170);
-  vertex(32-10, 8+170);
-  vertex(34-10, 18+170);
-  vertex(44-10, 20+170);
-  vertex(34-10, 22+170);
-  vertex(32-10, 32+170);
-  vertex(30-10,22+170);
+  vertex((20-10)*width/400, (20+170)*height/400);
+  vertex((30-10)*width/400, (18+170)*height/400);
+  vertex((32-10)*width/400, (8+170)*height/400);
+  vertex((34-10)*width/400, (18+170)*height/400);
+  vertex((44-10)*width/400, (20+170)*height/400);
+  vertex((34-10)*width/400, (22+170)*height/400);
+  vertex((32-10)*width/400, (32+170)*height/400);
+  vertex((30-10)*width/400, (22+170)*height/400);
   endShape(CLOSE);
   
    beginShape();
-  vertex(20+215, 20);
-  vertex(30+215, 18);
-  vertex(32+215, 8);
-  vertex(34+215, 18);
-  vertex(44+215, 20);
-  vertex(34+215, 22);
-  vertex(32+215, 32);
-  vertex(30+215,22);
+  vertex((20+215)*width/400, 20*height/400);
+  vertex((30+215)*width/400, 18*height/400);
+  vertex((32+215)*width/400, 8*height/400);
+  vertex((34+215)*width/400, 18*height/400);
+  vertex((44+215)*width/400, 20*height/400);
+  vertex((34+215)*width/400, 22*height/400);
+  vertex((32+215)*width/400, 32*height/400);
+  vertex((30+215)*width/400, 22*height/400);
   endShape(CLOSE);
   
   
         beginShape();
-  vertex(20+180, 20+30);
-  vertex(30+180, 18+30);
-  vertex(32+180, 8+30);
-  vertex(34+180, 18+30);
-  vertex(44+180, 20+30);
-  vertex(34+180, 22+30);
-  vertex(32+180, 32+30);
-  vertex(30+180, 22+30);
+  vertex((20+180)*width/400, (20+30)*height/400);
+  vertex((30+180)*width/400, (18+30)*height/400);
+  vertex((32+180)*width/400, (8+30)*height/400);
+  vertex((34+180)*width/400, (18+30)*height/400);
+  vertex((44+180)*width/400, (20+30)*height/400);
+  vertex((34+180)*width/400, (22+30)*height/400);
+  vertex((32+180)*width/400, (32+30)*height/400);
+  vertex((30+180)*width/400, (22+30)*height/400);
   endShape(CLOSE);
   
          beginShape();
-  vertex(20+20, 20+60);
-  vertex(30+20, 18+60);
-  vertex(32+20, 8+60);
-  vertex(34+20, 18+60);
-  vertex(44+20, 20+60);
-  vertex(34+20, 22+60);
-  vertex(32+20, 32+60);
-  vertex(30+20, 22+60);
+  vertex((20+20)*width/400, (20+60)*height/400);
+  vertex((30+20)*width/400, (18+60)*height/400);
+  vertex((32+20)*width/400, (8+60)*height/400);
+  vertex((34+20)*width/400, (18+60)*height/400);
+  vertex((44+20)*width/400, (20+60)*height/400);
+  vertex((34+20)*width/400, (22+60)*height/400);
+  vertex((32+20)*width/400, (32+60)*height/400);
+  vertex((30+20)*width/400, (22+60)*height/400);
   endShape(CLOSE);
   
   
   beginShape();
-  vertex(20+330, 20+35);
-  vertex(30+330, 18+35);
-  vertex(32+330, 8+35);
-  vertex(34+330, 18+35);
-  vertex(44+330, 20+35);
-  vertex(34+330, 22+35);
-  vertex(32+330, 32+35);
-  vertex(30+330, 22+35);
+  vertex((20+330)*width/400, (20+35)*height/400);
+  vertex((30+330)*width/400, (18+35)*height/400);
+  vertex((32+330)*width/400, (8+35)*height/400);
+  vertex((34+330)*width/400, (18+35)*height/400);
+  vertex((44+330)*width/400, (20+35)*height/400);
+  vertex((34+330)*width/400, (22+35)*height/400);
+  vertex((32+330)*width/400, (32+35)*height/400);
+  vertex((30+330)*width/400, (22+35)*height/400);
   endShape(CLOSE);
   
     beginShape();
-   vertex(20+170, 20+170);
-  vertex(30+170, 18+170);
-  vertex(32+170, 8+170);
-  vertex(34+170, 18+170);
-  vertex(44+170, 20+170);
-  vertex(34+170, 22+170);
-  vertex(32+170, 32+170);
-  vertex(30+170, 22+170);
+  vertex((20+170)*width/400,  (20+170)*height/400);
+  vertex((30+170)*width/400,  (18+170)*height/400);
+  vertex((32+170)*width/400,  (8+170)*height/400);
+  vertex((34+170)*width/400,  (18+170)*height/400);
+  vertex((44+170)*width/400,  (20+170)*height/400);
+  vertex((34+170)*width/400,  (22+170)*height/400);
+  vertex((32+170)*width/400,  (32+170)*height/400);
+  vertex((30+170)*width/400,  (22+170)*height/400);
   endShape(CLOSE);
   
       beginShape();
-   vertex(20+250, 20+100);
-  vertex(30+250, 18+100);
-  vertex(32+250, 8+100);
-  vertex(34+250, 18+100);
-  vertex(44+250, 20+100);
-  vertex(34+250, 22+100);
-  vertex(32+250, 32+100);
-  vertex(30+250, 22+100);
+  vertex((20+250)*width/400, (20+100)*height/400);
+  vertex((30+250)*width/400, (18+100)*height/400);
+  vertex((32+250)*width/400, (8+100)*height/400);
+  vertex((34+250)*width/400, (18+100)*height/400);
+  vertex((44+250)*width/400, (20+100)*height/400);
+  vertex((34+250)*width/400, (22+100)*height/400);
+  vertex((32+250)*width/400, (32+100)*height/400);
+  vertex((30+250)*width/400, (22+100)*height/400);
   endShape(CLOSE);
   
       beginShape();
-   vertex(20+150, 20+80);
-  vertex(30+150, 18+80);
-  vertex(32+150, 8+80);
-  vertex(34+150, 18+80);
-  vertex(44+150, 20+80);
-  vertex(34+150, 22+80);
-  vertex(32+150, 32+80);
-  vertex(30+150, 22+80);
+  vertex((20+150)*width/400, (20+80)*height/400);
+  vertex((30+150)*width/400, (18+80)*height/400);
+  vertex((32+150)*width/400, (8+80)*height/400);
+  vertex((34+150)*width/400, (18+80)*height/400);
+  vertex((44+150)*width/400, (20+80)*height/400);
+  vertex((34+150)*width/400, (22+80)*height/400);
+  vertex((32+150)*width/400, (32+80)*height/400);
+  vertex((30+150)*width/400, (22+80)*height/400);
   endShape(CLOSE);
   
      beginShape();
-  vertex(20+235, 20+160);
-  vertex(30+235, 18+160);
-  vertex(32+235, 8+160);
-  vertex(34+235, 18+160);
-  vertex(44+235, 20+160);
-  vertex(34+235, 22+160);
-  vertex(32+235, 32+160);
-  vertex(30+235, 22+160);
+  vertex((20+235)*width/400, (20+160)*height/400);
+  vertex((30+235)*width/400, (18+160)*height/400);
+  vertex((32+235)*width/400, (8+160)*height/400);
+  vertex((34+235)*width/400, (18+160)*height/400);
+  vertex((44+235)*width/400, (20+160)*height/400);
+  vertex((34+235)*width/400, (22+160)*height/400);
+  vertex((32+235)*width/400, (32+160)*height/400);
+  vertex((30+235)*width/400, (22+160)*height/400);
   endShape(CLOSE);
   
   
@@ -217,47 +217,47 @@ function draw() {
   //estrellas titilando, más dinamismo 
    fill(par);
    beginShape();
-  vertex(20+90, 20+70);
-  vertex(30+90, 18+70);
-  vertex(32+90, 8+70);
-  vertex(34+90, 18+70);
-  vertex(44+90, 20+70);
-  vertex(34+90, 22+70);
-  vertex(32+90, 32+70);
-  vertex(30+90, 22+70);
+  vertex((20+90)*width/400, (20+70)*height/400);
+  vertex((30+90)*width/400, (18+70)*height/400);
+  vertex((32+90)*width/400, (8+70)*height/400);
+  vertex((34+90)*width/400, (18+70)*height/400);
+  vertex((44+90)*width/400, (20+70)*height/400);
+  vertex((34+90)*width/400, (22+70)*height/400);
+  vertex((32+90)*width/400, (32+70)*height/400);
+  vertex((30+90)*width/400, (22+70)*height/400);
   endShape(CLOSE);
    
     beginShape();
-   vertex(20+130, 20+120);
-  vertex(30+130, 18+120);
-  vertex(32+130, 8+120);
-  vertex(34+130, 18+120);
-  vertex(44+130, 20+120);
-  vertex(34+130, 22+120);
-  vertex(32+130, 32+120);
-  vertex(30+130, 22+120);
+   vertex((20+130)*width/400, (20+120)*height/400);
+  vertex((30+130)*width/400, (18+120)*height/400);
+  vertex((32+130)*width/400, (8+120)*height/400);
+  vertex((34+130)*width/400, (18+120)*height/400);
+  vertex((44+130)*width/400, (20+120)*height/400);
+  vertex((34+130)*width/400, (22+120)*height/400);
+  vertex((32+130)*width/400, (32+120)*height/400);
+  vertex((30+130)*width/400, (22+120)*height/400);
   endShape(CLOSE);
   
 beginShape();
-  vertex(20+290, 20+15);
-  vertex(30+290, 18+15);
-  vertex(32+290, 8+15);
-  vertex(34+290, 18+15);
-  vertex(44+290, 20+15);
-  vertex(34+290, 22+15);
-  vertex(32+290, 32+15);
-  vertex(30+290, 22+15);
+  vertex((20+290)*width/400, (20+15)*height/400);
+  vertex((30+290)*width/400, (18+15)*height/400);
+  vertex((32+290)*width/400, (8+15)*height/400);
+  vertex((34+290)*width/400, (18+15)*height/400);
+  vertex((44+290)*width/400, (20+15)*height/400);
+  vertex((34+290)*width/400, (22+15)*height/400);
+  vertex((32+290)*width/400, (32+15)*height/400);
+  vertex((30+290)*width/400, (22+15)*height/400);
   endShape(CLOSE);
 
         beginShape();
-   vertex(20+200, 20+100);
-  vertex(30+200, 18+100);
-  vertex(32+200, 8+100);
-  vertex(34+200, 18+100);
-  vertex(44+200, 20+100);
-  vertex(34+200, 22+100);
-  vertex(32+200, 32+100);
-  vertex(30+200, 22+100);
+  vertex((20+200)*width/400, (20+100)*height/400);
+  vertex((30+200)*width/400, (18+100)*height/400);
+  vertex((32+200)*width/400, (8+100)*height/400);
+  vertex((34+200)*width/400, (18+100)*height/400);
+  vertex((44+200)*width/400, (20+100)*height/400);
+  vertex((34+200)*width/400, (22+100)*height/400);
+  vertex((32+200)*width/400, (32+100)*height/400);
+  vertex((30+200)*width/400, (22+100)*height/400);
   endShape(CLOSE);
   
   //Intervalos de titilar de las estrellas
@@ -351,69 +351,69 @@ beginShape();
   
   fill(par);
         beginShape();
-  vertex(20+250, 20+50);
-  vertex(30+250, 18+50);
-  vertex(32+250, 8+50);
-  vertex(34+250, 18+50);
-  vertex(44+250, 20+50);
-  vertex(34+250, 22+50);
-  vertex(32+250, 32+50);
-  vertex(30+250, 22+50);
+  vertex((20+250)*width/400, (20+50)*height/400);
+  vertex((30+250)*width/400, (18+50)*height/400);
+  vertex((32+250)*width/400, (8+50)*height/400);
+  vertex((34+250)*width/400, (18+50)*height/400);
+  vertex((44+250)*width/400, (20+50)*height/400);
+  vertex((34+250)*width/400, (22+50)*height/400);
+  vertex((32+250)*width/400, (32+50)*height/400);
+  vertex((30+250)*width/400, (22+50)*height/400);
   endShape(CLOSE);
   
      beginShape();
-  vertex(20+60, 20+20);
-  vertex(30+60, 18+20);
-  vertex(32+60, 8+20);
-  vertex(34+60, 18+20);
-  vertex(44+60, 20+20);
-  vertex(34+60, 22+20);
-  vertex(32+60, 32+20);
-  vertex(30+60, 22+20);
+  vertex((20+60)*width/400, (20+20)*height/400);
+  vertex((30+60)*width/400, (18+20)*height/400);
+  vertex((32+60)*width/400, (8+20)*height/400);
+  vertex((34+60)*width/400, (18+20)*height/400);
+  vertex((44+60)*width/400, (20+20)*height/400);
+  vertex((34+60)*width/400, (22+20)*height/400);
+  vertex((32+60)*width/400, (32+20)*height/400);
+  vertex((30+60)*width/400, (22+20)*height/400);
   endShape(CLOSE);
   
         beginShape();
-  vertex(20+120, 20+10);
-  vertex(30+120, 18+10);
-  vertex(32+120, 8+10);
-  vertex(34+120, 18+10);
-  vertex(44+120, 20+10);
-  vertex(34+120, 22+10);
-  vertex(32+120, 32+10);
-  vertex(30+120, 22+10);
+  vertex((20+120)*width/400, (20+10)*height/400);
+  vertex((30+120)*width/400, (18+10)*height/400);
+  vertex((32+120)*width/400, (8+10)*height/400);
+  vertex((34+120)*width/400, (18+10)*height/400);
+  vertex((44+120)*width/400, (20+10)*height/400);
+  vertex((34+120)*width/400, (22+10)*height/400);
+  vertex((32+120)*width/400, (32+10)*height/400);
+  vertex((30+120)*width/400, (22+10)*height/400);
   endShape(CLOSE);
   
   beginShape();
-    vertex(20+10, 20+120);
-  vertex(30+10, 18+120);
-  vertex(32+10, 8+120);
-  vertex(34+10, 18+120);
-  vertex(44+10, 20+120);
-  vertex(34+10, 22+120);
-  vertex(32+10, 32+120);
-  vertex(30+10, 22+120);
+  vertex((20+10)*width/400, (20+120)*height/400);
+  vertex((30+10)*width/400, (18+120)*height/400);
+  vertex((32+10)*width/400, (8+120)*height/400);
+  vertex((34+10)*width/400, (18+120)*height/400);
+  vertex((44+10)*width/400, (20+120)*height/400);
+  vertex((34+10)*width/400, (22+120)*height/400);
+  vertex((32+10)*width/400, (32+120)*height/400);
+  vertex((30+10)*width/400, (22+120)*height/400);
   endShape(CLOSE);
   
   beginShape();
-   vertex(20+70, 20+140);
-  vertex(30+70, 18+140);
-  vertex(32+70, 8+140);
-  vertex(34+70, 18+140);
-  vertex(44+70, 20+140);
-  vertex(34+70, 22+140);
-  vertex(32+70, 32+140);
-  vertex(30+70, 22+140);
+  vertex((20+70)*width/400, (20+140)*height/400);
+  vertex((30+70)*width/400, (18+140)*height/400);
+  vertex((32+70)*width/400, (8+140)*height/400);
+  vertex((34+70)*width/400, (18+140)*height/400);
+  vertex((44+70)*width/400, (20+140)*height/400);
+  vertex((34+70)*width/400, (22+140)*height/400);
+  vertex((32+70)*width/400, (32+140)*height/400);
+  vertex((30+70)*width/400, (22+140)*height/400);
   endShape(CLOSE);
   
     beginShape();
-   vertex(20+330, 20+160);
-  vertex(30+330, 18+160);
-  vertex(32+330, 8+160);
-  vertex(34+330, 18+160);
-  vertex(44+330, 20+160);
-  vertex(34+330, 22+160);
-  vertex(32+330, 32+160);
-  vertex(30+330, 22+160);
+  vertex((20+330)*width/400, (20+160)*height/400);
+  vertex((30+330)*width/400, (18+160)*height/400);
+  vertex((32+330)*width/400, (8+160)*height/400);
+  vertex((34+330)*width/400, (18+160)*height/400);
+  vertex((44+330)*width/400, (20+160)*height/400);
+  vertex((34+330)*width/400, (22+160)*height/400);
+  vertex((32+330)*width/400, (32+160)*height/400);
+  vertex((30+330)*width/400, (22+160)*height/400);
   endShape(CLOSE);
   
   //Intervalos de titilar de las estrellas
@@ -501,67 +501,67 @@ beginShape();
   frameRate(5);
   //Base de la luna (grande)
   fill(220);
-  ellipse(200,400, 600, 400);
+  ellipse(200*width/400,400*height/400, 600*width/400, 400*height/400);
   
   //Cráteres encima de la luna
   fill(200);
-  ellipse(120,350, 30, 20);
-  ellipse(120+150,350-30, 70, 30);
-  ellipse(120-100,350-60, 50, 25);
-  ellipse(120+30,350-100, 100, 50);
-  ellipse(120+220,350-100, 25, 10);
-  line(234,319.3,232.05,330.6);
-  line(305,319.3,309.63,330.6);
-  line(45,290.05,48.08,299.3);
-  line(99,250,94.57,269.45);
-  line(200,250,206.89,269.45);
-  line(327, 250, 326.05, 255);
-  line(352.36, 250, 354.44, 255);
-  line(104,350,103.4,357.34);
-  line(135,350,137.2,357.34);
+  ellipse(120*width/400,350*height/400, 30*width/400, 20*height/400);
+  ellipse((120+150)*width/400,(350-30)*height/400, 70*width/400, 30*height/400);
+  ellipse((120-100)*width/400,(350-60)*height/400, 50*width/400, 25*height/400);
+  ellipse((120+30)*width/400,(350-100)*height/400, 100*width/400, 50*height/400);
+  ellipse((120+220)*width/400,(350-100)*height/400, 25*width/400, 10*height/400);
+  line(234*width/400,319.3*height/400,232.05*width/400,330.6*height/400);
+  line(305*width/400,319.3*height/400,309.63*width/400,330.6*height/400);
+  line(45*width/400,290.05*height/400,48.08*width/400,299.3*height/400);
+  line(99*width/400,250*height/400,94.57*width/400,269.45*height/400);
+  line(200*width/400,250*height/400, 206.89*width/400, 269.45*height/400);
+  line(327*width/400, 250*height/400, 326.05*width/400, 255*height/400);
+  line(352.36*width/400, 250*height/400, 354.44*width/400, 255*height/400);
+  line(104*width/400,350*height/400,103.4*width/400, 357.34*height/400);
+  line(135*width/400,350*height/400,137.2*width/400, 357.34*height/400);
   
   //Cuerpo y traje del astronauta
-  line(x1*cas2,y1*cas2,x2*cas2,y2*cas2);
-  line(x3*cas2,y1*cas2,x2*cas2,y2*cas2);
-  line(x2*cas2,y2*cas2,250*cas2,204*cas2);
+  line((x1*cas2)*width/400,(y1*cas2)*height/400,(x2*cas2)*width/400,(y2*cas2)*height/400);
+  line((x3*cas2)*width/400,(y1*cas2)*height/400,(x2*cas2)*width/400,(y2*cas2)*height/400);
+  line((x2*cas2)*width/400,(y2*cas2)*height/400,(250*cas2)*width/400,(204*cas2)*height/400);
   fill(240);
-  ellipse(250*cas2, 181*cas2, 45, 45);
+  ellipse((250*cas2)*width/400, (181*cas2)*height/400, 45*width/400, 45*height/400);
    stroke(0);
   noFill();
   beginShape();
-  vertex(236.74*cas2,263.28*cas2);
-  vertex(235*cas2,250*cas2);
-  vertex(250*cas2,215*cas2);
-  vertex(263.34*cas2,245*cas2);
-  vertex(278.29*cas2,255*cas2);
+  vertex((236.74*cas2)*width/400,(263.28*cas2)*height/400);
+  vertex((235*cas2)*width/400,(250*cas2)*height/400);
+  vertex((250*cas2)*width/400,(215*cas2)*height/400);
+  vertex((263.34*cas2)*width/400,(245*cas2)*height/400);
+  vertex((278.29*cas2)*width/400,(255*cas2)*height/400);
   endShape();
   fill(240);
-  rect(237*cas2,209*cas2,25*cas2,35*cas2,10,10,10,10);
-  ellipse(246.87*cas2,228.46*cas2,6.77,9.7);
+  rect((237*cas2)*width/400,(209*cas2)*height/400,(25*cas2)*width/400,(35*cas2)*height/400,10,10,10,10);
+  ellipse((246.87*cas2)*width/400,(228.46*cas2)*height/400,6.77*width/400,9.7*height/400);
   beginShape();
-  vertex(251.68*cas2,229.43*cas2);
-  vertex(252.47*cas2,228.43*cas2);
-  vertex(254.11*cas2,228.43*cas2);
-  vertex(254.9*cas2,229.43*cas2);
-  vertex(251.68*cas2,232.95*cas2);
-  vertex(254.9*cas2,232.95*cas2);
+  vertex((251.68*cas2)*width/400,(229.43*cas2)*height/400);
+  vertex((252.47*cas2)*width/400,(228.43*cas2)*height/400);
+  vertex((254.11*cas2)*width/400,(228.43*cas2)*height/400);
+  vertex((254.9*cas2)*width/400,(229.43*cas2)*height/400);
+  vertex((251.68*cas2)*width/400,(232.95*cas2)*height/400);
+  vertex((254.9*cas2)*width/400,(232.95*cas2)*height/400);
   endShape();
   fill(147);
   beginShape();
-  vertex(252.3*cas2,220.47*cas2);
-  vertex(255.16*cas2,216.47*cas2);
-  vertex(256.65*cas2,208.48*cas2);
-  vertex(256.65*cas2,205.05*cas2);
-  vertex(252.3*cas2,200*cas2)
-  vertex(252.3*cas2,198.97*cas2);
-  vertex(253.84*cas2,198.49*cas2);
-  vertex(255.26*cas2,199.16*cas2);
-  vertex(260.47*cas2,205.13*cas2);
-  vertex(260.47*cas2,208.82*cas2);
-  vertex(259.24*cas2,216.88*cas2);
-  vertex(255.59*cas2,221.9*cas2);
-  vertex(253.45*cas2,221.9*cas2);
-  vertex(252.3*cas2,220.47*cas2);
+  vertex((252.3*cas2)*width/400,(220.47*cas2)*height/400);
+  vertex((255.16*cas2)*width/400,(216.47*cas2)*height/400);
+  vertex((256.65*cas2)*width/400,(208.48*cas2)*height/400);
+  vertex((256.65*cas2)*width/400,(205.05*cas2)*height/400);
+  vertex((252.3*cas2)*width/400,(200*cas2)*height/400)
+  vertex((252.3*cas2)*width/400,(198.97*cas2)*height/400);
+  vertex((253.84*cas2)*width/400,(198.49*cas2)*height/400);
+  vertex((255.26*cas2)*width/400,(199.16*cas2)*height/400);
+  vertex((260.47*cas2)*width/400,(205.13*cas2)*height/400);
+  vertex((260.47*cas2)*width/400,(208.82*cas2)*height/400);
+  vertex((259.24*cas2)*width/400,(216.88*cas2)*height/400);
+  vertex((255.59*cas2)*width/400,(221.9*cas2)*height/400);
+  vertex((253.45*cas2)*width/400,(221.9*cas2)*height/400);
+  vertex((252.3*cas2)*width/400,(220.47*cas2)*height/400);
   endShape();
     if (frameCount >= 102 && frameCount< 112){
     cas = 1000;
@@ -572,12 +572,12 @@ beginShape();
   fill(255,255,217);
   stroke(0);
   beginShape();
-  vertex(256-cas,181*cas2);
-  vertex(250*cas2,158*cas2);
-  vertex(260-cas*3.6,159*cas2);
-  vertex(271-cas*7,169*cas2);
-  vertex(272-cas*7.4,176*cas2);
-  vertex(256-cas,181*cas2);
+  vertex((256-cas)*width/400,(181*cas2)*height/400);
+  vertex((250*cas2)*width/400,(158*cas2)*height/400);
+  vertex((260-cas*3.6)*width/400,(159*cas2)*height/400);
+  vertex((271-cas*7)*width/400,(169*cas2)*height/400);
+  vertex((272-cas*7.4)*width/400,(176*cas2)*height/400);
+  vertex((256-cas)*width/400,(181*cas2)*height/400);
   endShape();
   if (frameCount >= 42 && frameCount< 102){
     cas = 6;
@@ -590,58 +590,58 @@ beginShape();
   //Estrella fugaz amarilla
  fill(255,242,0);
     beginShape();
-  vertex(20+380-est2, 20+170-est);
-  vertex(33+380-est2, 20+170-est);
-  vertex(38+380-est2, 7+170-est);
-  vertex(42+380-est2, 20+170-est);
-  vertex(56+380-est2, 20+170-est);
-  vertex(48.36+380-est2, 25.41+170-est);
-  vertex(85+380-est2, 42+170-est);
-  vertex(78+380-est2, 42+170-est);
-  vertex(81+380-est2,46+170-est);
-  vertex(77+380-est2,46+170-est);
-  vertex(80+380-est2,51+170-est);
-  vertex(46+380-est2,31.68+170-est);
-  vertex(49+380-est2,41+170-est);
-  vertex(38+380-est2,33+170-est);
-  vertex(27+380-est2,41+170-est);
-  vertex(31+380-est2,28+170-est);
-  vertex(20+380-est2, 20+170-est);
+  vertex((20+380-est2)*width/400, (20+170-est)*height/400);
+  vertex((33+380-est2)*width/400, (20+170-est)*height/400);
+  vertex((38+380-est2)*width/400, (7+170-est)*height/400);
+  vertex((42+380-est2)*width/400, (20+170-est)*height/400);
+  vertex((56+380-est2)*width/400, (20+170-est)*height/400);
+  vertex((48.36+380-est2)*width/400, (25.41+170-est)*height/400);
+  vertex((85+380-est2)*width/400, (42+170-est)*height/400);
+  vertex((78+380-est2)*width/400, (42+170-est)*height/400);
+  vertex((81+380-est2)*width/400, (46+170-est)*height/400);
+  vertex((77+380-est2)*width/400, (46+170-est)*height/400);
+  vertex((80+380-est2)*width/400, (51+170-est)*height/400);
+  vertex((46+380-est2)*width/400, (31.68+170-est)*height/400);
+  vertex((49+380-est2)*width/400, (41+170-est)*height/400);
+  vertex((38+380-est2)*width/400, (33+170-est)*height/400);
+  vertex((27+380-est2)*width/400, (41+170-est)*height/400);
+  vertex((31+380-est2)*width/400, (28+170-est)*height/400);
+  vertex((20+380-est2)*width/400, (20+170-est)*height/400);
   endShape(CLOSE);
   endShape();
   
   //Intervalos de la estrella fugaz para su movimiento
   
-  if (frameCount >= 1 && frameCount< 200){
+  if (frameCount >= 1 && frameCount< 140){
     est = est+4;
     est2 = est2+5;
    }
   
 	//Pensamiento del astronauta
   fill(220);
-  ellipse(274.23,163.78,5*bol,5*bol);
-  ellipse(283.7,154.29, 9*bol,9*bol);
-  ellipse(296.84,141.55,13.5*bol,13.5*bol);
-  ellipse(336.25,109.72,86*bol,70*bol);
+  ellipse(274.23*width/400,(163.78)*height/400,(5*bol)*width/400,(5*bol)*height/400);
+  ellipse(283.7*width/400,(154.29)*height/400, (9*bol)*width/400,(9*bol)*height/400);
+  ellipse(296.84*width/400,(141.55)*height/400,(13.5*bol)*width/400,(13.5*bol)*height/400);
+  ellipse(336.25*width/400,(109.72)*height/400,(86*bol)*width/400,(70*bol)*height/400);
   fill(0);
-  ellipse(320,109.72, 6*bol, 6*bol);
-  ellipse(336.77,109.72, 6*bol, 6*bol);
-  ellipse(352.18,109.72, 6*bol, 6*bol);
+  ellipse(320*width/400,(109.72)*height/400, (6*bol)*width/400, (6*bol)*height/400);
+  ellipse(336.77*width/400,(109.72)*height/400, (6*bol)*width/400, (6*bol)*height/400);
+  ellipse(352.18*width/400,(109.72)*height/400, (6*bol)*width/400, (6*bol)*height/400);
   if (frameCount >= 34 && frameCount< 62){
     bol = 1;
    }
-    if (frameCount >= 62 && frameCount< 200){
+    if (frameCount >= 62 && frameCount< 140){
     bol = 0;
    }
   
   //Ovni y su movimiento
   fill(40,133,65);
-  ellipse(522-ovn,48,110,110);
+  ellipse((522-ovn)*width/400,48*height/400,110*width/400,110*height/400);
   fill(59,181,84);
-  ellipse(522-ovn,61.77,223.75,74.76);
-  ellipse(522-ovn,71.3,223.75,74.76);
+  ellipse((522-ovn)*width/400,61.77*height/400,223.75*width/400,74.76*height/400);
+  ellipse((522-ovn)*width/400,71.3*height/400,223.75*width/400,74.76*height/400);
   fill(147);
-  ellipse(522-ovn,71.3,82.5,26);
+  ellipse((522-ovn)*width/400,71.3*height/400,82.5*width/400,26*height/400);
   
   if (frameCount >= 60 && frameCount< 87){
     ovn = ovn+10;
@@ -649,12 +649,12 @@ beginShape();
     if (frameCount >= 87 && frameCount< 112){
     ovn = ovn;
    }
-    if (frameCount >= 112 && frameCount< 200){
+    if (frameCount >= 112 && frameCount< 140){
     ovn = ovn-10;
    }
   //Láser de adbucción
   fill(255,0,231,80);
-  quad(220.5*abd,71.3*abd,280*abd,71.3*abd,284*abd,84.2*abd2,218*abd,84.2*abd2);
+  quad((220.5*abd)*width/400,(71.3*abd)*height/400,(280*abd)*width/400,(71.3*abd)*height/400,(284*abd)*width/400,(84.2*abd2)*height/400,(218*abd)*width/400,(84.2*abd2)*height/400);
   if (frameCount >= 87 && frameCount< 92){
     abd = 1;
     abd2 = 1;
@@ -666,4 +666,8 @@ beginShape();
     abd2 = 0;
     abd = 0;
    }
+  //if(frameCount <= 140){
+    //if (frameCount % 2 == 0) 
+    //saveCanvas("espacio_Ej03Diaz" + frameCount, "jpg");
+//}
 }
