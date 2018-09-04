@@ -8,7 +8,11 @@
   var est= 2;
   var est2= 2;
   var cas= 0;
+	var cas2= 1;
   var bol= 0;
+	var ovn= 0;
+	var abd= 0;
+ 	var abd2= 0;
 function setup() {
   createCanvas(400, 400);
 }
@@ -174,7 +178,40 @@ function draw() {
        if (frameCount >= 65 && frameCount< 70){
     par = 255;  
    }
+         if (frameCount >= 70 && frameCount< 75){
+    par = 0;  
+   }       if (frameCount >= 75 && frameCount< 80){
+    par = 255;  
+   }       if (frameCount >= 80 && frameCount< 85){
+    par = 0;  
+   }       if (frameCount >= 85 && frameCount< 90){
+    par = 255;  
+   }       if (frameCount >= 90 && frameCount< 95){
+    par = 0;  
+	 }
+         if (frameCount >= 95 && frameCount< 100){
+    par = 255;  
+   }
+         if (frameCount >= 100 && frameCount< 105){
+    par = 0;  
+   }
+         if (frameCount >= 105 && frameCount< 110){
+    par = 255;  
+   }
+         if (frameCount >= 110 && frameCount< 115){
+    par = 0;  
+   }
+           if (frameCount >= 115 && frameCount< 120){
+    par = 255;  
+   }
+           if (frameCount >= 120 && frameCount< 125){
+    par = 0;  
+   }
+           if (frameCount >= 125 && frameCount< 130){
+    par = 255;  
+   }
   
+
   //Estrellitas titilando intervalo 2
   //Para que la pantalla no tenga tan pocos intervalos de
   //estrellas titilando, más dinamismo 
@@ -268,6 +305,44 @@ beginShape();
        if (frameCount >= 66 && frameCount< 71){
     par = 255;  
    }
+         if (frameCount >= 71 && frameCount< 76){
+    par = 0;  
+   }
+         if (frameCount >= 76 && frameCount< 81){
+    par = 255;  
+   }
+         if (frameCount >= 81 && frameCount< 86){
+    par = 0;  
+   }
+         if (frameCount >= 86 && frameCount< 91){
+    par = 255;  
+   }
+         if (frameCount >= 91 && frameCount< 96){
+    par = 0;  
+   }
+         if (frameCount >= 96 && frameCount< 101){
+    par = 255;  
+   }
+         if (frameCount >= 101 && frameCount< 106){
+    par = 0;  
+   }
+         if (frameCount >= 106 && frameCount< 111){
+    par = 255;  
+   }
+           if (frameCount >= 111 && frameCount< 116){
+    par = 0;  
+   }
+           if (frameCount >= 116 && frameCount< 121){
+    par = 255;  
+   }
+           if (frameCount >= 121 && frameCount< 126){
+    par = 0;  
+   }
+           if (frameCount >= 126 && frameCount< 131){
+    par = 255;  
+   }
+  
+  
   
   
   //Estrellitas titilando intervalo 3
@@ -386,15 +461,49 @@ beginShape();
          if (frameCount >= 67 && frameCount< 72){
     par = 255;  
    }
-  
-  
+   	     if (frameCount >= 72 && frameCount< 77){
+    par = 0;  
+   }
+     	     if (frameCount >= 77 && frameCount< 82){
+    par = 255;  
+   }
+     	     if (frameCount >= 67 && frameCount< 87){
+    par = 0;  
+   }
+     	     if (frameCount >= 87 && frameCount< 92){
+    par = 255;  
+   }
+     	     if (frameCount >= 92 && frameCount< 97){
+    par = 0;  
+   }
+     	     if (frameCount >= 97 && frameCount< 102){
+    par = 255;  
+   }
+     	     if (frameCount >= 102 && frameCount< 107){
+    par = 0;  
+   }
+     	     if (frameCount >= 107 && frameCount< 112){
+    par = 255;  
+   }
+       	     if (frameCount >= 112 && frameCount< 117){
+    par = 0;  
+   }
+       	     if (frameCount >= 117 && frameCount< 122){
+    par = 255;  
+   }
+       	     if (frameCount >= 122 && frameCount< 127){
+    par = 0;  
+   }
+       	     if (frameCount >= 127 && frameCount< 132){
+    par = 255;  
+   }
   
   frameRate(5);
   //Base de la luna (grande)
   fill(220);
   ellipse(200,400, 600, 400);
   
-  //Craters encima de la luna
+  //Cráteres encima de la luna
   fill(200);
   ellipse(120,350, 30, 20);
   ellipse(120+150,350-30, 70, 30);
@@ -412,64 +521,72 @@ beginShape();
   line(135,350,137.2,357.34);
   
   //Cuerpo y traje del astronauta
-  line(x1,y1,x2,y2);
-  line(x3,y1,x2,y2);
-  line(x2,y2,250,204);
+  line(x1*cas2,y1*cas2,x2*cas2,y2*cas2);
+  line(x3*cas2,y1*cas2,x2*cas2,y2*cas2);
+  line(x2*cas2,y2*cas2,250*cas2,204*cas2);
   fill(240);
-  ellipse(250, 181, 45, 45);
+  ellipse(250*cas2, 181*cas2, 45, 45);
    stroke(0);
   noFill();
   beginShape();
-  vertex(236.74,263.28);
-  vertex(235,250);
-  vertex(250,215);
-  vertex(263.34,245);
-  vertex(278.29,255);
+  vertex(236.74*cas2,263.28*cas2);
+  vertex(235*cas2,250*cas2);
+  vertex(250*cas2,215*cas2);
+  vertex(263.34*cas2,245*cas2);
+  vertex(278.29*cas2,255*cas2);
   endShape();
   fill(240);
-  rect(237,209,25,35,10,10,10,10);
-  ellipse(246.87,228.46,6.77,9.7);
+  rect(237*cas2,209*cas2,25*cas2,35*cas2,10,10,10,10);
+  ellipse(246.87*cas2,228.46*cas2,6.77,9.7);
   beginShape();
-  vertex(251.68,229.43);
-  vertex(252.47,228.43);
-  vertex(254.11,228.43);
-  vertex(254.9,229.43);
-  vertex(251.68,232.95);
-  vertex(254.9,232.95);
+  vertex(251.68*cas2,229.43*cas2);
+  vertex(252.47*cas2,228.43*cas2);
+  vertex(254.11*cas2,228.43*cas2);
+  vertex(254.9*cas2,229.43*cas2);
+  vertex(251.68*cas2,232.95*cas2);
+  vertex(254.9*cas2,232.95*cas2);
   endShape();
   fill(147);
   beginShape();
-  vertex(252.3,220.47);
-  vertex(255.16,216.47);
-  vertex(256.65,208.48);
-  vertex(256.65,205.05);
-  vertex(252.3,200)
-  vertex(252.3,198.97);
-  vertex(253.84,198.49);
-  vertex(255.26,199.16);
-  vertex(260.47,205.13);
-  vertex(260.47,208.82);
-  vertex(259.24,216.88);
-  vertex(255.59,221.9);
-  vertex(253.45,221.9);
-  vertex(252.3,220.47);
+  vertex(252.3*cas2,220.47*cas2);
+  vertex(255.16*cas2,216.47*cas2);
+  vertex(256.65*cas2,208.48*cas2);
+  vertex(256.65*cas2,205.05*cas2);
+  vertex(252.3*cas2,200*cas2)
+  vertex(252.3*cas2,198.97*cas2);
+  vertex(253.84*cas2,198.49*cas2);
+  vertex(255.26*cas2,199.16*cas2);
+  vertex(260.47*cas2,205.13*cas2);
+  vertex(260.47*cas2,208.82*cas2);
+  vertex(259.24*cas2,216.88*cas2);
+  vertex(255.59*cas2,221.9*cas2);
+  vertex(253.45*cas2,221.9*cas2);
+  vertex(252.3*cas2,220.47*cas2);
   endShape();
-  
+    if (frameCount >= 102 && frameCount< 112){
+    cas = 1000;
+    cas2 = 1000;
+    }
   //Casco astronauta que se mueve de un lado al otro con
   //la estrella
   fill(255,255,217);
   stroke(0);
   beginShape();
-  vertex(256-cas,181);
-  vertex(250,158);
-  vertex(260-cas*3.6,159);
-  vertex(271-cas*7,169);
-  vertex(272-cas*7.4,176);
-  vertex(256-cas,181);
+  vertex(256-cas,181*cas2);
+  vertex(250*cas2,158*cas2);
+  vertex(260-cas*3.6,159*cas2);
+  vertex(271-cas*7,169*cas2);
+  vertex(272-cas*7.4,176*cas2);
+  vertex(256-cas,181*cas2);
   endShape();
-  if (frameCount >= 42 && frameCount< 200){
+  if (frameCount >= 42 && frameCount< 102){
     cas = 6;
   }
+  if (frameCount >= 102 && frameCount< 112){
+    cas = 1000;
+    cas2 = 1000;
+  }
+      
   //Estrella fugaz amarilla
  fill(255,242,0);
     beginShape();
@@ -495,94 +612,12 @@ beginShape();
   
   //Intervalos de la estrella fugaz para su movimiento
   
-  if (frameCount >= 1 && frameCount< 4){
-    est = 10;
-    est2 = 5;
+  if (frameCount >= 1 && frameCount< 200){
+    est = est+4;
+    est2 = est2+5;
    }
-   if (frameCount >= 4 && frameCount< 7){
-    est = 20; 
-    est2 = 10;
-   }
-    if (frameCount >= 7 && frameCount< 10){
-    est = 30;  
-    est2 = 15;
-   }
-     if (frameCount >= 10 && frameCount< 13){
-    est = 40; 
-      est2 = 20;
-   }
-     if (frameCount >= 13 && frameCount< 16){
-    est2 = 50;
-       est2 = 30;
-   }
-     if (frameCount >= 16 && frameCount< 19){
-    est = 60; 
-       est2 = 40;
-   }
-     if (frameCount >= 19 && frameCount< 22){
-    est = 70; 
-       est2 = 60;
-   }
-     if (frameCount >= 22 && frameCount< 25){
-    est = 80;  
-       est2 = 80;
-   }
-     if (frameCount >= 25 && frameCount< 28){
-    est = 90;  
-       est2 = 100;
-   }
-       if (frameCount >= 28 && frameCount< 31){
-    est = 100;  
-         est2 = 120;
-   }
-       if (frameCount >= 31 && frameCount< 34){
-    est = 120;  
-         est2 = 140;
-   }
-       if (frameCount >= 34 && frameCount< 37){
-    est = 130; 
-         est2 = 160; 
-   }
-       if (frameCount >= 37 && frameCount< 40){
-    est = 140;
-         est2 = 180;
-   }
-       if (frameCount >= 40 && frameCount< 43){
-    est = 150;
-         est2 = 190;
-   }
-         if (frameCount >= 43 && frameCount< 46){
-    est = 160;
-         est2 = 200;
-   }
-         if (frameCount >= 46 && frameCount< 49){
-    est = 170;
-         est2 = 210;
-   }
-         if (frameCount >= 49 && frameCount< 52){
-    est = 180;
-         est2 = 220;
-   }
-         if (frameCount >= 52 && frameCount< 55){
-    est = 190;
-         est2 = 225;
-   }
-    if (frameCount >= 55 && frameCount< 58){
-    est = 200;
-         est2 = 230;
-   }
-    if (frameCount >= 58 && frameCount< 61){
-    est = 210;
-         est2 = 235;
-   }
-    if (frameCount >= 61 && frameCount< 64){
-    est = 220;
-         est2 = 240;
-   }
-    if (frameCount >= 64 && frameCount< 67){
-    est = 230;
-         est2 = 245;
-   }
+  
+	//Pensamiento del astronauta
   fill(220);
   ellipse(274.23,163.78,5*bol,5*bol);
   ellipse(283.7,154.29, 9*bol,9*bol);
@@ -592,11 +627,43 @@ beginShape();
   ellipse(320,109.72, 6*bol, 6*bol);
   ellipse(336.77,109.72, 6*bol, 6*bol);
   ellipse(352.18,109.72, 6*bol, 6*bol);
-  if (frameCount >= 34 && frameCount< 67){
+  if (frameCount >= 34 && frameCount< 62){
     bol = 1;
    }
-    if (frameCount >= 67 && frameCount< 200){
+    if (frameCount >= 62 && frameCount< 200){
     bol = 0;
    }
   
+  //Ovni y su movimiento
+  fill(40,133,65);
+  ellipse(522-ovn,48,110,110);
+  fill(59,181,84);
+  ellipse(522-ovn,61.77,223.75,74.76);
+  ellipse(522-ovn,71.3,223.75,74.76);
+  fill(147);
+  ellipse(522-ovn,71.3,82.5,26);
+  
+  if (frameCount >= 60 && frameCount< 87){
+    ovn = ovn+10;
+   }
+    if (frameCount >= 87 && frameCount< 112){
+    ovn = ovn;
+   }
+    if (frameCount >= 112 && frameCount< 200){
+    ovn = ovn-10;
+   }
+  //Láser de adbucción
+  fill(255,0,231,80);
+  quad(220.5*abd,71.3*abd,280*abd,71.3*abd,284*abd,84.2*abd2,218*abd,84.2*abd2);
+  if (frameCount >= 87 && frameCount< 92){
+    abd = 1;
+    abd2 = 1;
+   }
+    if (frameCount >= 92 && frameCount< 102){
+    abd2 = abd2+1.2;
+   }    
+  if (frameCount >= 102 && frameCount< 112){
+    abd2 = 0;
+    abd = 0;
+   }
 }
