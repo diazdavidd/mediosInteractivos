@@ -14,7 +14,7 @@
 	var abd= 0;
  	var abd2= 0;
 function setup() {
-  createCanvas(1200, 1200);
+  createCanvas(windowWidth, windowHeight);
 }
 
 function draw() {
