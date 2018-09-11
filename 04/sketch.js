@@ -96,8 +96,61 @@ function draw() {
   rect(posXbot19, posYbot19, tamBot19, tamBot19);
   rect(posXbot20, posYbot20, tamBot20, tamBot20);
   rect(posXbot21, posYbot21, tamBot21, tamBot21);
-  
+    ellipse(65, 75, 20, 20);
+  ellipse(85, 75, 20, 20);
+  arc(125, 70, 20, 20, 0, PI);
+  line(160, 90, 190, 60);
+  point(224, 75);
+	triangle(275, 65,290, 85,260, 85);
+  quad(307,84,344,64,315,67,326,85)
+  triangle(375, 70,391, 90,361, 90);
+  quad(470,80,483,70,460,86,493,81)
+  arc(525, 70, 30, 30, 0, PI);
+  arc(525, 70, 15, 15, 0, PI);
 
+  ellipse(375,70, 20,20);
+  ellipse(425, 75, 30, 30);
+  ellipse(425, 75, 15, 15);
+  push();
+  fill(255,0,0);
+  rect(63, 513, 25,25);
+  pop();
+  push();
+  fill(0,255,0);
+  rect(113, 513, 25,25);
+  pop();
+  push();
+  fill(0,0,255);
+  rect(163, 513, 25,25);
+  pop();
+  push();
+  fill(0,255,255);
+  rect(213, 513, 25,25);
+  pop();
+  push();
+  fill(255,0,255);
+  rect(263, 513, 25,25);
+  pop();
+  push();
+  fill(255,255,0);
+  rect(313, 513, 25,25);
+  pop();
+  push();
+  fill(100,100,0);
+  rect(363, 513, 25,25);
+  pop();
+  push();
+  fill(0,200,100);
+  rect(413, 513, 25,25);
+  pop();
+  push();
+  fill(180,180,0);
+  rect(463, 513, 25,25);
+  pop();
+  push();
+  fill(80,0,250);
+  rect(513, 513, 25,25);
+  pop();
 
   if(mouseIsPressed){
   
