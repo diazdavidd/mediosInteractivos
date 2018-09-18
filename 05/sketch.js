@@ -46,7 +46,7 @@ function draw() {
     textSize(18);
     text('zZzzzZZzzzzzzZzzzzzz', 85, 30);
   }
-              if (miHora >= 1 && miHora <= 5) {
+              if (miHora >= 0 && miHora <= 5) {
     textSize(18);
     text('zZzzzZZzzzzzzZzzzzzz', 85, 30);
   }
