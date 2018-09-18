@@ -4,3 +4,4 @@ Ejercicios de la clase diseño en medios interactivos
 2. [Repetición](https://diazdavidd.github.io/mediosInteractivos/02/)
 3. [Flipbook](https://diazdavidd.github.io/mediosInteractivos/03/)
 4. [Herramienta de dibujo](https://diazdavidd.github.io/mediosInteractivos/04/)
+5. [Tiempo desde mi perspectiva](https://diazdavidd.github.io/mediosInteractivos/05/)
