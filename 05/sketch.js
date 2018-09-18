@@ -109,6 +109,12 @@ function draw() {
     text('Hora del ocio y el entretenimiento', 50, 30);
   }
   
+    //Texto prepararse para dormir
+            if (miHora == 23) {
+    textSize(18);
+    text('Prepárate para dormir', 85, 30);
+  }
+  
   //Texto para dormir
             if (miHora >= 23 && miHora == 24) {
     textSize(18);
