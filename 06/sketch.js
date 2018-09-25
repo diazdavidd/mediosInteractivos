@@ -96,7 +96,6 @@ line(mouseX-2, mouseY-2, pmouseX-2,pmouseY-2);
       ellipse(posX, posY, 1, 1);
     }
   }
-    pop();
     push();
       if (nivel > 0.2) {
     for (var i = 0; i < 400; i = i + 1) {
@@ -104,7 +103,8 @@ line(mouseX-2, mouseY-2, pmouseX-2,pmouseY-2);
       var posY = random(330, 400);
       noStroke();
       fill(255,255,255);
-      ellipse (350, 350, 20, 20);
+      ellipse (370, 330, 20, 20);
+      ellipse (30, 330, 20, 20);
     }
   }
   pop();
@@ -120,7 +120,7 @@ line(mouseX-2, mouseY-2, pmouseX-2,pmouseY-2);
       point (posX, posY);
     }
   }
-
+pop();
   //Cambiar volumen con respecto a la posicion del mouse en Y
     var miVol = map(mouseY, height, 0, 0, 1);
   miMusiquita.setVolume(miVol);
