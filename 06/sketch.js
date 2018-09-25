@@ -6,6 +6,7 @@ var miMusiquita;
 var x = 150;
 var y = 175;
 var vol;
+var speed = 1;
 
 //Carga música y fotos
 function preload(){
@@ -31,12 +32,9 @@ function draw(){
   g = random(255);
   b = random(255);
   
-    	if(keyIsDown(187)){
-    if(miMusiquita.isPlaying()){
-      miMusiquita.rate(vol)
-    }
-  }
   
+
+
   //Mensaje si el volumen está demasiado bajo
     if (miMusiquita.getVolume() >= 0.1 && miMusiquita.currentTime() > 14) {
     background(220, 150, 0)
@@ -87,7 +85,7 @@ line(mouseX-2, mouseY-2, pmouseX-2,pmouseY-2);
   rect(360,0 / 2, 40, nivel * 380);
   rect(400,0 / 2, 40, nivel * 430);
   
-  //Elipses que van a los lados y se amplian dependiendo de la amplitud de onda
+  //Elipses aleatorias negras aleatorias en el fondo cuando amplitud es mayor a 0.05
     if (nivel > 0.05) {
     for (var i = 0; i < 400; i = i + 1) {
       var posX = random(0, 400);
@@ -96,6 +94,7 @@ line(mouseX-2, mouseY-2, pmouseX-2,pmouseY-2);
       ellipse(posX, posY, 1, 1);
     }
   }
+  //Elipses a los lados que siguen la amplitud de la canción
     push();
       if (nivel > 0.2) {
     for (var i = 0; i < 400; i = i + 1) {
@@ -109,7 +108,7 @@ line(mouseX-2, mouseY-2, pmouseX-2,pmouseY-2);
   }
   pop();
   
-  //Puntos que aparecen aleatoriamente cuando la amplitud es mayor a 0.1
+  //Puntos que aparecen blancos aleatoriamente cuando la amplitud es mayor a 0.1
   push();
       if (nivel > 0.1) {
     for (var i = 0; i < 400; i = i + 1) {
@@ -177,8 +176,8 @@ fill(0);
   text(miMusiquita.getVolume(), 170, 280);
 text(miMusiquita.currentTime(),170,295);
   
-//Color y forma de la figura que sigue el mouse y
-//que sigue la amplitud de la onda de la canción
+//Figuras elipse que siguen la amplitud de la
+//cancion
   fill(r, g, b);
   ellipse(270, 210, nivel*400, nivel*400);
   fill(r, g, b);
