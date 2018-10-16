@@ -20,8 +20,12 @@ var electric;
 var autoenojado;
 var x = 300;
 var y = 0;
-var bolas = []; //variable que guarda la lista de bolas
-var numBolas = 0; //numero de bolas creadas
+var bolas = []; //variable que guarda la lista de cubos de basura
+var numBolas = 0; //numero de cubos de basura creados
+var tiempo; //crea una lista de tiempo para guardar el tiempo entre dos clics
+var vel; //variable para guardar la velocidad de los clics
+var tam1; //tamaño de WallE
+var mtam; //variable para suavizar el tamaño de WallE
 
 //Cargando todas las imagenes y audios
 function preload() {
@@ -76,6 +80,13 @@ function setup() {
     var temY = 310;
     boticas[i2] = new botaPlanta(temX, temY);
   }
+  
+    tiempo = [0, 0]; //crea una lista de tiempo para guardar el tiempo entre dos clics
+  vel = 0; //velocidad inicial es cero
+
+  //tamaño inicial es 10px
+  tam1 = 100;
+  mtam = 100;
 }
 
 function draw() {
@@ -240,6 +251,51 @@ function draw() {
   fill(255);
   text("Arrastre el ratón para lanzar cubos de basura", 10, 20);
   text("Arrastre el robot maligno con el mouse para moverlo", 10, 40);
+
+    //la velocidad de la bola se obtiene de la division de 60 segundos entre el intervalo de dos clics
+  //tiempo[1] = tiempo en el que se hizo el primer clic
+  //tiempo[0] = tiempo en el que se hizo el segundo clic
+  var vel = 60000 / (tiempo[1] - tiempo[0]);
+
+  //si han pasado mas de 200 millisegundos entre un clic y otro se asigna un valor de 0 a la velocidad
+  if (millis() - tiempo[1] > 200) {
+    vel = 0;
+  }
+
+  //texto de la pantalla
+  fill(255);
+  noStroke();
+  text("Hacer clic lo más rápido posible para agrandar a Wall•E", 10, 60);
+
+  //floor() redondea el numero de vel a un valor entero
+  text(floor(vel) + " clics por minuto", 10, 80);
+
+  //revisa que la velocidad no sea infinita (es decir que no exista) y que sea mayor a 200 clics por segundo
+  if (vel != Infinity && floor(vel) > 200){
+
+    //aumenta el tamaño de WallE dependiendo de los clics por minuto
+    tam1+= vel/400;
+
+  } else if (tam1 > 100){ //si la velocidad es menor a 200 y el tamaño de WallE es mayor a 10
+
+    //disminuye el tamaño de WallE
+    tam1-= 3;
+
+  } else {
+
+    //establece 10 como el tamaño mínimo para WallE
+    tam1 = 100;
+
+  }
+
+  //esta parte del codigo permite suavizar el cambio de tamaño de WallE
+  var dif = tam1 - mtam; //resta del tamaño actual de la bola con el nuevo tamaño
+
+  //si WallE debe cambiar de tamaño lo hace pero de manera suave
+  if(abs(dif) > 1.0) {
+    mtam = mtam + dif/8.0;
+  }
+  
 }
 
 
@@ -252,20 +308,20 @@ function robotE(miX, miY) {
   //Habilidades
   this.dibujarse = function() {
     if (this.estaVivo == true) {
-      image(walle, mouseX, mouseY, 100, 100);
+      image(walle, mouseX, mouseY, mtam, mtam);
     }
   }
   this.amor = function() {
     this.estaVivo = false
-    image(walleamor, mouseX, mouseY, 100, 100);
+    image(walleamor, mouseX, mouseY, mtam, mtam);
   }
   this.asustado = function() {
     this.estaVivo = false
-    image(walleasustado, mouseX, mouseY, 100, 100);
+    image(walleasustado, mouseX, mouseY, mtam, mtam);
   }
   this.confundido = function() {
     this.estaVivo = false
-    image(confundidowalle, mouseX, mouseY, 100, 100);
+    image(confundidowalle, mouseX, mouseY, mtam, mtam);
   }
 }
 
@@ -475,7 +531,7 @@ function mouseDragged() {
     //revisa si la posición del mouse es cercana a la posicion de la ellipse
   if (dist(mouseX, mouseY, x, y) < 90) {
 
-    //actualiza la posicion de la elipse con la posición del mouse
+    //actualiza la posicion del cubo con la posición del mouse
     x = mouseX;
     y = mouseY;
     
@@ -503,4 +559,13 @@ function mouseDragged() {
 
   //aumenta el numero de cubos de la lista
   numBolas++;
+}
+//funcion que se llama cuando se hace clic
+function mouseClicked() {
+
+  //el tiempo del segundo clic se corre a la segunda posicion
+  tiempo[0] = tiempo[1];
+
+  //se guarda el tiempo del primer clic en el arreglo
+  tiempo[1] = millis();
 }
