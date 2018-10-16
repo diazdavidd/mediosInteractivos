@@ -7,3 +7,4 @@ Ejercicios de la clase diseño en medios interactivos
 5. [Tiempo desde mi perspectiva](https://diazdavidd.github.io/mediosInteractivos/05/)
 6. [Video musical interactivo](https://diazdavidd.github.io/mediosInteractivos/06/)
 7. [Ecosistema](https://diazdavidd.github.io/mediosInteractivos/07/)
+8. [Ecosistema avanzado](https://diazdavidd.github.io/mediosInteractivos/08/)
