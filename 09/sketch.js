@@ -36,9 +36,8 @@ function draw() {
       text("Toca la pantalla para comenzar", width / 2, height / 2.5);
   text("Inclina la pantalla para mover a Colombia", width / 2, height / 2.3);
   text("¡Salva a Colombia de Uri... Duque!", width / 2, height / 2.12);
-      	fill(255, 220);
+  fill(255, 100);
 	rect(0, 0, width, height);
-  rect(0, 0, width, height);
 	
   }
   
