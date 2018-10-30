@@ -112,10 +112,10 @@ function draw() {
     //   if (dist(progresos[i2].x, progresos[i2].y, x, y) < progresos[i2].tam) {
     //     progresos[i2].morir();
     //   }
-    //   if (miliseg == 15){
-    //   estado = 4;
-    //   }
-    // }
+      if (miliseg == 15){
+      estado = 4;
+      }
+
 
     //El estado 2 es cuando se gana
   } else if (estado == 2) {
