@@ -1,6 +1,6 @@
-// var progreso;
-// var progresos = [];
-// var numProgresos = 4;
+var progreso;
+var progresos = [];
+var numProgresos = 4;
 var duques = []; //variable que guarda la lista de Duques
 var numDuques = 0; //numero de Duques creados
 var estado = 0; //estado del juego
@@ -18,7 +18,7 @@ var miliseg = 0;
 function preload() {
   duque = loadImage('assets/duque.png');
   colombia = loadImage('assets/colombia.png');
-  // progresito = loadImage('assets/progreso.png');
+  progresito = loadImage('assets/progreso.png');
   uribe = loadImage('assets/uribe.png');
 }
 
@@ -43,22 +43,22 @@ function setup() {
   velx1 = 0;
   vely1 = 0;
 
-//   //Crea los 4 progresos
-//   progreso = new progress();
-//   for (var i2 = 0; i2 < 4; i2 = i2 + 1) {
-//     progresos[i2] = new progress(progress.x, progress.y);
+  //Crea los 4 progresos
+  progreso = new progress();
+  for (var i2 = 0; i2 < 4; i2 = i2 + 1) {
+    progresos[i2] = new progress(progress.x, progress.y);
 
-//     //inicializa las variables de posicion y tamano
-//     x1 = width / 2;
-//     y1 = height / 2;
-//     tam = 60;
+    //inicializa las variables de posicion y tamano
+    x1 = width / 2;
+    y1 = height / 2;
+    tam = 60;
 
-//     //crea las bolas de la lista
-//     for (var i = 0; i < numBolas; i++) {
-//       bolas[i] = new bola();
-//     }
+    //crea las bolas de la lista
+    for (var i = 0; i < numBolas; i++) {
+      bolas[i] = new bola();
+    }
 
-//   }
+  }
   
   tiempoAnterior = millis();
   tiempoAnterior1 = second();
@@ -107,15 +107,15 @@ function draw() {
     y = constrain(y, 1, (windowHeight - tam1));
 
 	  //Dibuja los progresos y los hace morir cuando se toca con Colombia
-    // for (i2 = 0; i2 < 4; i2 = i2 + 1) {
-    //   progresos[i2].mostrar();
-    //   if (dist(progresos[i2].x, progresos[i2].y, x, y) < progresos[i2].tam) {
-    //     progresos[i2].morir();
-    //   }
+    for (i2 = 0; i2 < progresos.lenght; i2 = i2 + 1) {
+      progresos[i2].mostrar();
+      if (dist(progresos[i2].x, progresos[i2].y, x, y) < progresos[i2].tam) {
+        progresos[i2].morir();
+      }
       if (miliseg == 15){
       estado = 4;
       }
-
+    }
 
     //El estado 2 es cuando se gana
   } else if (estado == 2) {
@@ -304,28 +304,28 @@ function comenzar() {
 
 
 
-// //función progreso
-// function progress(px, py) {
+//función progreso
+function progress(px, py) {
 
-//   this.estaVivo = true;
-//   //variables de posicion, los progresos se crean entre 0 y el ancho
-//   //de ventana y entre el alto de ventana-200 y el alto - 50
-//   this.x = random(0, windowWidth);
-//   this.y = random(windowHeight - 200, windowHeight - 50);
+  this.estaVivo = true;
+  //variables de posicion, los progresos se crean entre 0 y el ancho
+  //de ventana y entre el alto de ventana-200 y el alto - 50
+  this.x = random(0, windowWidth);
+  this.y = random(windowHeight - 200, windowHeight - 50);
 
-//   //variable de tamano aleatorio entre 30 y 60
-//   this.tam = random(30, 60);
+  //variable de tamano aleatorio entre 30 y 60
+  this.tam = random(30, 60);
 
-//   //función que dibuja los progresos
-//   this.mostrar = function() {
-//     if (this.estaVivo == true) {
-//       image(progresito, this.x, this.y, this.tam, this.tam);
-//     }
-//   }
-//   this.morir = function() {
-//     this.estaVivo = false;
-//   }
-// }
+  //función que dibuja los progresos
+  this.mostrar = function() {
+    if (this.estaVivo == true) {
+      image(progresito, this.x, this.y, this.tam, this.tam);
+    }
+  }
+  this.morir = function() {
+    this.estaVivo = false;
+  }
+}
 //esta funcion se activa cuando el dispositivo reconoce que se movio un toque en la pantalla
 function touchMoved() {
 
