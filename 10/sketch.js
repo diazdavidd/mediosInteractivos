@@ -107,7 +107,7 @@ function draw() {
     y = constrain(y, 1, (windowHeight - tam1));
 
 	  //Dibuja los progresos y los hace morir cuando se toca con Colombia
-    for (i2 = 0; i2 < progresos.lenght; i2 = i2 + 1) {
+    for (i2 = 0; i2 < 4; i2 = i2 + 1) {
       progresos[i2].mostrar();
       if (dist(progresos[i2].x, progresos[i2].y, x, y) < progresos[i2].tam) {
         progresos[i2].morir();
