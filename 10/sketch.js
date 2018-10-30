@@ -61,6 +61,7 @@ function setup() {
   }
   
   tiempoAnterior = millis();
+  tiempoAnterior1 = second();
 }
 //Carga las imágenes usadas en el juego
 
@@ -71,7 +72,7 @@ function draw() {
     fill(0);
     text("Toca la pantalla para comenzar", width / 2, height / 2.5);
     text("Inclina la pantalla para mover a Colombia", width / 2, height / 2.3);
-    text("¡Salva a Colombia de Uri... Duque!", width / 2, height / 2.12);
+    text("¡Sobrevive 15 segundos sin que Duque toque a Colombia!", width / 2, height / 2.12);
     fill(255, 100);
     rect(0, 0, width, height);
     miliseg = 0;
@@ -86,7 +87,7 @@ function draw() {
     rect(0, 0, width, height);
     fill(0);
     //Muestra el puntaje en pantalla
-    miliseg = floor(millis() - tiempoAnterior);
+    miliseg = floor(second() - tiempoAnterior1);
     text(miliseg, width / 2, height / 2);
     comenzar();
 
@@ -110,6 +111,9 @@ function draw() {
       progresos[i2].mostrar();
       if (dist(progresos[i2].x, progresos[i2].y, x, y) < progresos[i2].tam) {
         progresos[i2].morir();
+      }
+      if (miliseg == 15){
+      estado = 4;
       }
     }
 
@@ -144,7 +148,7 @@ function draw() {
       //texto   
   
   background(220);
-  fill(255);
+  fill(0);
   noStroke();
 	miliseg = floor(millis() - tiempoAnterior);
 	text(miliseg, width / 2, height / 2);
@@ -159,7 +163,7 @@ function draw() {
     bolas[i].mostrar();
     bolas[i].mover();
 
-    if (x2 >= windowWidth - tam1){
+    if (miliseg >= 20000){
   estado = 2;
 }
     //revisa si se estaba tocando alguna bola y en tal caso la mata
@@ -178,7 +182,7 @@ function draw() {
     fill(0);
     text("¡Nivel 2!", width / 2, height / 2.5);
     text("Mueve a Colombia arrastrándola con el dedo", width / 2, height / 2.3);
-    text("¡No dejes que Uribe te toque!", width / 2, height / 2.12);
+    text("¡No dejes que Uribe te toque, llega a puntaje 20000 para ganar!", width / 2, height / 2.12);
     
   }
 
@@ -251,15 +255,12 @@ function touchStarted() {
   //comenzar el juego cuando se está en el estado inicial
   if (estado == 0) {
     estado = 1;
-    tiempoAnterior = millis();
+    tiempoAnterior1 = second();
   } 
-  //Esto es para pasar de nivel con un toque en la pantalla
-  else if (estado == 1) {
-    estado = 4;
-  }
   //Pasar de las instrucciones al nivel 2 con un toque
   else if (estado == 4) {
     estado = 5;
+    tiempoAnterior = millis();
   }
   //Reiniciar el juego
   else if (estado == 2) {
