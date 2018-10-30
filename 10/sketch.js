@@ -83,6 +83,7 @@ function draw() {
     fill(255, 220);
     rect(0, 0, width, height);
     fill(0);
+    //Muestra el puntaje en pantalla
     miliseg = floor(millis() - tiempoAnterior);
     text(miliseg, width / 2, height / 2);
     comenzar();
@@ -103,19 +104,19 @@ function draw() {
     y = constrain(y, 1, (windowHeight - tam1));
 
 	  //Dibuja los progresos y los hace morir cuando se toca con Colombia
-    for (i2 = 0; i2 < progresos.lenght; i2 = i2 + 1) {
+    for (i2 = 0; i2 < 4; i2 = i2 + 1) {
       progresos[i2].mostrar();
       if (dist(progresos[i2].x, progresos[i2].y, x, y) < progresos[i2].tam) {
         progresos[i2].morir();
       }
     }
 
-    //El estado 2 es cuando se gana, aún no se puede ganar pues no he
-    //hecho más niveles
+    //El estado 2 es cuando se gana
   } else if (estado == 2) {
     background(220);
     noStroke();
     fill(0);
+    //Muestra textos de felicitación, puntaje e instrucciones para volver a jugar
     text("¡Ganaste!", width / 2, height / 2.5);
     text("Toca la pantalla para reiniciar el juego", width / 2, height / 2.3);
     text('Tu puntaje: ' + miliseg, width / 2, height / 2);
@@ -126,6 +127,13 @@ function draw() {
     noStroke();
     fill(0);
     text("¡Perdiste!", width / 2, height / 2);
+    
+    //Reinicia los Uribes para que creen en otros lugares random
+    for (var i = 0; i < numBolas; i++) {
+    bolas[i].x = random(tam1+10, width);
+  	bolas[i].y = random(height);
+  
+    }
     
     x2 = 10;
     y2 = windowHeight/2;
@@ -264,6 +272,11 @@ function touchStarted() {
   else if (estado == 4) {
     estado = 5;
   }
+  //Reiniciar el juego
+  else if (estado == 2) {
+    estado = 0;
+  }
+  
   //reiniciar el juego cuando ya se perdió
   if (estado == 3) {
     estado = 0;
