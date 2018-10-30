@@ -12,6 +12,7 @@ var x1, y1; //variables para posicion de la elipse
 var tam; //variable para tamano de la elipse
 var bolas = []; //variable que guarda la lista de bolas
 var numBolas = 10; //numero de bolas creadas
+var miliseg = 0;
 
 //Carga todas las imagenes antes de comenzar a dibujar
 function preload() {
@@ -73,6 +74,7 @@ function draw() {
     text("¡Salva a Colombia de Uri... Duque!", width / 2, height / 2.12);
     fill(255, 100);
     rect(0, 0, width, height);
+    miliseg = 0;
   }
 
 
@@ -80,6 +82,9 @@ function draw() {
   else if (estado == 1) {
     fill(255, 220);
     rect(0, 0, width, height);
+    fill(0);
+    miliseg = floor(millis() - tiempoAnterior);
+    text(miliseg, width / 2, height / 2);
     comenzar();
 
     //asigna valores a la velocidad de acuerdo a la rotación del dispositivo
@@ -113,6 +118,7 @@ function draw() {
     fill(0);
     text("¡Ganaste!", width / 2, height / 2.5);
     text("Toca la pantalla para reiniciar el juego", width / 2, height / 2.3);
+    text('Tu puntaje: ' + miliseg, width / 2, height / 2);
 
     //El estado 3 es cuando se pierde, si toca Duque a Colombia
   } else if (estado == 3) {
@@ -132,7 +138,8 @@ function draw() {
   background(220);
   fill(255);
   noStroke();
-	text(floor((millis() - tiempoAnterior)), width / 2, height / 2);
+miliseg = floor(millis() - tiempoAnterior);
+	text(miliseg, width / 2, height / 2);
   //pinta la elipse en la posicion x, y
  		velx1 = map(rotationY, -90, 90, -20, 20);
     vely1 = map(rotationX, -90, 90, -20, 20);
@@ -247,6 +254,7 @@ function touchStarted() {
   //comenzar el juego cuando se está en el estado inicial
   if (estado == 0) {
     estado = 1;
+    tiempoAnterior = millis();
   } 
   //Esto es para pasar de nivel con un toque en la pantalla
   else if (estado == 1) {
