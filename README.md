@@ -9,5 +9,4 @@ Ejercicios de la clase diseño en medios interactivos
 7. [Ecosistema](https://diazdavidd.github.io/mediosInteractivos/07/)
 8. [Ecosistema avanzado](https://diazdavidd.github.io/mediosInteractivos/08/)
 9. [Avances juego](https://diazdavidd.github.io/mediosInteractivos/09/)
-
-10.[Juego](https://diazdavidd.github.io/mediosInteractivos/10/)
+ 10.[Juego](https://diazdavidd.github.io/mediosInteractivos/10/)
