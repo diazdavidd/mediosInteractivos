@@ -75,6 +75,8 @@ function draw() {
     fill(255, 100);
     rect(0, 0, width, height);
     miliseg = 0;
+      x2 = 10;
+  y2 = height/2;
   }
 
 
@@ -135,8 +137,6 @@ function draw() {
   
     }
     
-    x2 = 10;
-    y2 = windowHeight/2;
     
     
   	//El estado 5 es el segundo nivel
@@ -146,22 +146,11 @@ function draw() {
   background(220);
   fill(255);
   noStroke();
-miliseg = floor(millis() - tiempoAnterior);
+	miliseg = floor(millis() - tiempoAnterior);
 	text(miliseg, width / 2, height / 2);
-  //pinta la elipse en la posicion x, y
- 		velx1 = map(rotationY, -90, 90, -20, 20);
-    vely1 = map(rotationX, -90, 90, -20, 20);
 
     //Dibuja la imagen de Colombia
     image(colombia, x2, y2, tam1, tam1);
-
-    //suma la velocidad en x y en y a 
-    x2 = x2 + velx1;
-    y2 = y2 + vely1;
-
-    //evita que las posiciones se salgan del canvas
-    x2 = constrain(x2, 1, (windowWidth - tam1));
-    y2 = constrain(y2, 1, (windowHeight - tam1));
 
     fill(0);
     rect(0,height-10, x2, 10); 
@@ -319,17 +308,15 @@ function comenzar() {
 function progress(px, py) {
 
   this.estaVivo = true;
-  //variables de posicion, Duque se crea entre 0 y el ancho de la ventana
-  //y entre la posición 0-50 en Y
+  //variables de posicion, los progresos se crean entre 0 y el ancho
+  //de ventana y entre el alto de ventana-200 y el alto - 50
   this.x = random(0, windowWidth);
   this.y = random(windowHeight - 200, windowHeight - 50);
 
   //variable de tamano aleatorio entre 30 y 60
   this.tam = random(30, 60);
 
-
-
-  //función que dibuja a Duque
+  //función que dibuja los progresos
   this.mostrar = function() {
     if (this.estaVivo == true) {
       image(progresito, this.x, this.y, this.tam, this.tam);
@@ -337,7 +324,6 @@ function progress(px, py) {
   }
   this.morir = function() {
     this.estaVivo = false;
-    progresoMuertoCount = progresoMuertoCount + 1;
   }
 }
 //esta funcion se activa cuando el dispositivo reconoce que se movio un toque en la pantalla
@@ -345,12 +331,13 @@ function touchMoved() {
 
     //revisa si se estaba tocando la bola
     //se usa touches[0] porque se asume que solo hay un toque a la vez
-    if (dist(touches[0].x, touches[0].y, x1, y1) < tam/2) {
+    if (dist(touches[0].x, touches[0].y, x2, y2) < tam) {
 
       //actualiza la posicion de la elipse con la posicion del toque
-      x1 = touches[0].x;
-      y1 = touches[0].y;
+      x2 = touches[0].x;
+      y2 = touches[0].y;
     }
+  //para no mover la pantalla del explorador
   return false;
 }
 
@@ -408,8 +395,3 @@ function mouseDragged() {
 
 }
 
-function touchMoved() {
-
-  // prevent default
-  return false;
-}
