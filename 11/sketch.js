@@ -1,5 +1,5 @@
 var progreso;
-var progresos = [];
+var progresos = []; //variable que guarda la lista de progresos
 var numProgresos = 4;
 var duques = []; //variable que guarda la lista de Duques
 var numDuques = 0; //numero de Duques creados
@@ -18,10 +18,11 @@ var fondo;
 var win;
 var lose;
 var lvlup;
-var tiempo; //crea una lista de tiempo para guardar el tiempo entre dos clics
+var tiempo; //crea una lista de tiempo para guardar el tiempo entre dos toques
 var vel; //variable para guardar la velocidad de los clics
-var tamBola; //tamaño de la bola
-var mtam; //variable para suavizar el tamaño de la bola
+var tamBola; //tamaño de bola Colombia en 3 nivel
+var mtam; //variable para suavizar el tamaño de Colombia
+var cuentaPlay = 1; //Número de veces que se ha reproducido un sonido
 
 //Carga todas las imagenes antes de comenzar a dibujar
 function preload() {
@@ -44,7 +45,7 @@ function preload() {
 }
 
 function setup() {
-
+	//Hace que todas las imagenes se alineen al centro
   imageMode(CENTER);
   //Tamaño del canvas es el tamaño de ventana
   createCanvas(768, 1024); //crea un canvas de pantalla completa
@@ -53,37 +54,36 @@ function setup() {
   //configura el texto para que se dibuje con respecto al centro
   textAlign(CENTER);
 
-  //inicia las posiciones "x" y "y" en el centro de la pantalla
+  //inicia las posiciones del nivel 1 "x" y "y" las cuales son de Colombia, en el centro de la pantalla
   x = width / 2;
   y = height - 10;
 
-  //inicia posiciones x2 y2 en el centro a la izquierda de la pantalla
+  //inicia posiciones x2 y2 del nivel 2, es Colombia en el centro a la izquierda de la pantalla
   x2 = 10;
   y2 = height / 2;
 
-  //la velocidad inicial es 0
+  //la velocidad inicial de Colombia
   velx1 = 0;
   vely1 = 0;
 
-  //Crea los 4 progresos
+  //Crea los 4 progresos (libros)
   progreso = new progress();
   for (var i2 = 0; i2 < 10; i2 = i2 + 1) {
     progresos[i2] = new progress(progress.x, progress.y);
 
-    //inicializa las variables de posicion y tamano
+    //inicializa variables de posición y tamaño
     x1 = width / 2;
     y1 = height / 2;
     tam = 60;
 
-    //crea las bolas de la lista
+    //crea los Uribes de la lista
     for (var i = 0; i < numBolas; i++) {
       bolas[i] = new bola();
     }
 
   }
-
+	//Variable de milisegundos para el score
   tiempoAnterior = millis();
-  tiempoAnterior1 = second();
 
   tiempo = [0, 0]; //crea una lista de tiempo para guardar el tiempo entre dos clics
   vel = 0; //velocidad inicial es cero
@@ -93,23 +93,44 @@ function setup() {
   mtam = 10;
 
 }
-//Carga las imágenes usadas en el juego
 
 function draw() {
 
   //Estado 0 que es la pantalla inicial, muestra instrucciones 
   if (estado == 0) {
+    //Sonido de ganar se detiene, pues hay cuando se gana se devuelve a esta pantalla 
+    //y no se quiere tener ese sonido de fondo
+    if (win.isPlaying() == true) {
+    win.stop();
+    }
+    //Sonido de perder se detiene, pues hay cuando se pierde se devuelve a esta pantalla 
+    //y no se quiere tener ese sonido de fondo
+    if (lose.isPlaying() == true) {
+    lose.stop();
+    }
+    //Reinicia el tamaño de Colombia para el nivel 3, pues se quiere comenzar con Colombia
+    //pequeña de nuevo para que sea igual de difícil ganar cuando se pierda o se gane.
     tamBola = 10;
+    //Imagen de fondo, donde se enuncian instrucciones
     image(inicio, width / 2, height / 2, 768, 1024);
+    //Devolver los valores de posición de Colombia en los niveles 1 y 2 para no volver
+    //a la posición que estaba cuando se juegue de nuevo
     x2 = 10;
     y2 = height / 2;
     x = width / 2;
     y = height - 10;
+    //Se reinicia el conteo de progresos recogidos para el primer nivel
     progressCount = 0;
+    //Se reproduce el himno nacional, música temática del inicio.
+    y = height - 10;
+    y = height - 10;
     if (himno.isPlaying() == false) {
       himno.play(0);
     }
-
+    //Se reinicia la cuenta de las reproducciones que se han hecho
+    //de los sonidos de ganar y perder, para que se reproduzcan
+    //de nuevo solo una vez cuando gane/pierda.
+		cuentaPlay = 1; 
     
 
   }
@@ -118,15 +139,20 @@ function draw() {
 
   //Estado 1, acá comienza el juego 
   else if (estado == 1) {
+    //Imagen de fondo del primer nivel, donde se ve el congreso con efecto de blur
     image(nivel1, width / 2, height / 2, 768, 1024);
+    //Un rectángulo con opacidad 150 para que se vea menos el congreso
     fill(255, 150);
     rect(0, 0, width, height);
     fill(0);
+    //Parar el himno, pues ya no debe sonar en este estado
     if (himno.isPlaying() == true) {
     himno.stop();
     }
-    //Muestra el puntaje en pantalla
-    text(progressCount, width / 2, height / 2.5);
+    //Fuente del texto
+    textFont('Knewave');
+    //Muestra el número de progresos recogidos en pantalla
+    text('No. progresos: ' + progressCount, width / 2, height / 2.5);
     comenzar();
     //asigna valores a la velocidad de acuerdo a la rotación del dispositivo
     velx1 = map(rotationY, -90, 90, -20, 20);
@@ -135,7 +161,7 @@ function draw() {
     //Dibuja la imagen de Colombia
     image(colombia, x, y, tam1, tam1);
 
-    //suma la velocidad en x y en y a 
+    //suma la velocidad en x y en y a Colombia
     x = x + velx1;
     y = y + vely1;
 
@@ -151,24 +177,36 @@ function draw() {
       if (dist(progresos[i2].x, progresos[i2].y, x, y) < progresos[i2].tam) {
         progresos[i2].morir();
       }
+      //Crea conteo y suena un "plop" cuando se recoge un progreso
       if (progresos[i2].estaVivo != progresos[i2].estaVivoAntes) {
         progressCount = progressCount + 1;
         progresos[i2].estaVivoAntes = progresos[i2].estaVivo;
         plop.play();
       }
+      //conteo 10 se cambia de estado, y suena el sonido de nivel superado
       if (progressCount == 10) {
         estado = 4;
         lvlup.play();
       }
-
-    }
-    if (fondo.isPlaying() == false) {
+		//Se reproduce el sonido de fondo 
+    }	if (fondo.isPlaying() == false) {
       fondo.play();
     }
+    
+    
     //El estado 2 es cuando se gana
   } else if (estado == 2) {
+    //Reproducir el sonido de ganar sólo cuando el conteo de reproducciones sea uno
+    //luego le suma uno al conteo para que no vuelva a reproducirse
     if (win.isPlaying() == false) {
+      if (cuentaPlay == 1){
       win.play();
+      cuentaPlay = cuentaPlay + 1;
+    }
+      //Detiene el sonido de fondo pues es del estado anterior
+    }
+        if (fondo.isPlaying() == true) {
+      fondo.stop();
     }
     //Resetea los valores de progresos para que se muestren de nuevo
     for (i2 = 0; i2 < 10; i2 = i2 + 1) {
@@ -180,15 +218,26 @@ function draw() {
       progresos[i2].x = random(0, windowWidth);
       progresos[i2].y = random(windowHeight - 200, windowHeight - 50);
     }
-    fondo.pause();
     //Resetea el conteo de progresos a 0
     progressCount = 0;
     //Imagen donde dice que se ganó
     image(ganar, width / 2, height / 2, 768, 1024);
+    
+    
     //El estado 3 es cuando se pierde, si toca Duque a Colombia
   } else if (estado == 3) {
+    //Reproducir el sonido de perder sólo cuando el conteo de reproducciones sea uno
+    //luego se suma uno al conteo para que no vuelva a reproducirse
     if (lose.isPlaying() == false) {
+      if (cuentaPlay == 1){
       lose.play();
+        cuentaPlay = cuentaPlay + 1
+      }
+    }
+    
+    //Detiene el sonido de fondo del estado anterior
+    if (fondo.isPlaying() == true) {
+      fondo.stop();
     }
     //Resetea los valores de progresos para que se muestren de nuevo
     for (i2 = 0; i2 < 10; i2 = i2 + 1) {
@@ -202,11 +251,11 @@ function draw() {
     }
     //Resetea el conteo de progresos a 0
     progressCount = 0;
+    
     //Imagen de pérdida
-    fondo.pause();
     image(perdiste, width / 2, height / 2, 768, 1024);
 
-    //Reinicia los Uribes para que creen en otros lugares random
+    //Reinicia los Uribes para que se creen en otros lugares random
     for (var i = 0; i < numBolas; i++) {
       bolas[i].x = random(tam1 + 10, width);
       bolas[i].y = random(height);
@@ -216,15 +265,15 @@ function draw() {
 
     //El estado 5 es el segundo nivel
   } else if (estado == 5) {
-    //texto   
+    //Se muestra la imagen de fondo
     image(nivel1, width / 2, height / 2, 768, 1024);
     fill(255);
     noStroke();
+    //Se muestra el score actual
     miliseg = floor(millis() - tiempoAnterior);
     text(miliseg, width / 2, height / 2);
 
-    //Dibuja la imagen de Co
-    //El estado 6 es el tercer nivellombia
+    //Dibuja la imagen de Colombia
     image(colombia, x2, y2, tam1, tam1);
 
 
@@ -233,12 +282,13 @@ function draw() {
       bolas[i].mostrar();
       bolas[i].mover();
 
+      //Cambio de estado cuando el score sea 20000, sonido de nivel superado
       if (miliseg >= 20000) {
         estado = 6;
+        lvlup.play();
       }
-      //revisa si se estaba tocando alguna bola y en tal caso la mata
+      //revisa si se estaba tocando algún Uribe con Colombia y en tal caso se pierde
       //se usa touches[0] porque se asume que solo hay un toque a la vez
-      //si se tocan se pierde, o sea se va al estado 3
       if (dist(x2, y2, bolas[i].x, bolas[i].y) < bolas[i].tam) {
         estado = 3;
       }
@@ -247,34 +297,41 @@ function draw() {
 
   //El estado 4 son las instrucciones del nivel 2
   else if (estado == 4) {
+    //Imagen con instrucciones
     image(nivel2, width / 2, height / 2, 768, 1024);
+    
+    //Estado 6 son las instrucciones del nivel 3
   } else if (estado == 6) {
+    //Imagen con instrucciones
     image(nivel3, width / 2, height / 2, 768, 1024);
   }
 
-  //El estado 6 es el tercer nivel
+  //El estado 7 es el tercer nivel
   else if (estado == 7) {
 
-
+		//Reinicia score
     miliseg = floor(millis() - tiempoAnterior);
-
+		//Condicional para pasar de nivel cuando el score llegue a 0
     if (millis() - tiempoAnterior > 5000) {
       estado = 3;
     }
+    //Imagen de fondo
     image(nivel1, width / 2, height / 2, 768, 1024);
     noFill();
     strokeWeight(3);
     stroke(255);
+    //Indicador para saber a que tamaño hay que incrementar a Colombia
     ellipse(width / 2, height / 2, 200, 200);
     noStroke();
     fill(255);
-    text(5000 - floor((millis() - tiempoAnterior)), width / 2, height / 4);
+    //Tiempo restante para hacer que Colombia crezca
+    text('Tiempo restante: ' + (5000 - floor((millis() - tiempoAnterior))), width / 2, height / 4);
     //la velocidad de la bola se obtiene de la division de 60 segundos entre el intervalo de dos clics
-    //tiempo[1] = tiempo en el que se hizo el primer clic
-    //tiempo[0] = tiempo en el que se hizo el segundo clic
+    //tiempo[1] = tiempo en el que se hizo el primer toque
+    //tiempo[0] = tiempo en el que se hizo el segundo toque
     var vel = 60000 / (tiempo[1] - tiempo[0]);
 
-    //si han pasado mas de 200 millisegundos entre un clic y otro se asigna un valor de 0 a la velocidad
+    //si han pasado mas de 200 millisegundos entre un toque y otro se asigna un valor de 0 a la velocidad
     if (millis() - tiempo[1] > 200) {
       vel = 0;
     }
@@ -282,37 +339,39 @@ function draw() {
     //texto de la pantalla
     fill(255);
     noStroke();
-    text("Hacer clic lo más rápido posible", width / 2, height / 5);
 
     //floor() redondea el numero de vel a un valor entero
 
-    //revisa que la velocidad no sea infinita (es decir que no exista) y que sea mayor a 200 clics por segundo
+    //revisa que la velocidad no sea infinita (es decir que no exista) y que sea mayor a 200 toques por segundo
     if (vel != Infinity && floor(vel) > 200) {
 
-      //aumenta el tamaño de la elipse dependiendo de los clics por minuto
+      //aumenta el tamaño de Colombia dependiendo de los clics por minuto
       tamBola += vel / 400;
 
-    } else if (tamBola > 10) { //si la velocidad es menor a 200 y el tamaño de la elipse es mayor a 10
+    } else if (tamBola > 10) { //si la velocidad es menor a 200 y el tamaño de Colombia es mayor a 10
 
-      //disminuye el tamaño de la elipse
+      //disminuye el tamaño de Colombia
       tamBola -= 3;
 
     } else {
 
-      //establece 10 como el tamaño mínimo para la elipse
+      //establece 10 como el tamaño mínimo para Colombia
       tamBola = 10;
 
     }
 
-    //esta parte del codigo permite suavizar el cambio de tamaño de la ellipse
+    //esta parte del codigo permite suavizar el cambio de tamaño de Colombia
     var dif = tamBola - mtam; //resta del tamaño actual de la bola con el nuevo tamaño
 
-    //si la bola debe cambiar de tamaño lo hace pero de manera suave
+    //si Colombia debe cambiar de tamaño lo hace pero de manera suave
     if (abs(dif) > 1.0) {
       mtam = mtam + dif / 8.0;
     }
-
+		
+    //Dibuja la imagen de Colombia en la mitad del canvas
     image(colombia, width / 2, height / 2, tamBola, tamBola);
+    
+    //Condicional para pasar el nivel
     if (tamBola >= 200) {
       estado = 2;
     }
@@ -338,7 +397,8 @@ function presidente(px, py) {
   //y entre la posición 0-50 en Y
   this.x = random(0, windowWidth);
   this.y = random(0, 50);
-
+	this.estaVivo = true;
+  
   //variables de velocidad que recibe la funcion
   this.velx = px;
   this.vely = py;
@@ -349,7 +409,9 @@ function presidente(px, py) {
 
   //función que dibuja a Duque
   this.mostrar = function() {
+  if (this.estaVivo == true){
     image(duque, this.x, this.y, this.tam, this.tam);
+  }
   }
 
   //función que mueve a Duque
@@ -370,7 +432,6 @@ function presidente(px, py) {
       this.vely *= -1;
     }
   }
-
   //reduce el tamano de Duque hasta llegar a 0
   this.morir = function() {
     if (this.tam >= 0) {
@@ -383,9 +444,10 @@ function presidente(px, py) {
 function touchStarted() {
   //comenzar el juego cuando se está en el estado inicial
   if (estado == 0) {
-    tiempoAnterior1 = second();
+    //Reinicia valores de tiempoAnterior
     tiempoAnterior = millis();
     
+    //Botón para ir al primer nivel
     for (var i4 = 0; i4 < touches.length; i4++) {
 
       if (touches[i4].x > 212 && touches[i4].x < 582) {
@@ -396,15 +458,18 @@ function touchStarted() {
     }
   }
   //Pasar de las instrucciones al nivel 2 con un toque
+  //suena un plop
   else if (estado == 4) {
     estado = 5;
     tiempoAnterior = millis();
     plop.play();
   }
   //Reiniciar el juego cuando ganó
+  //reinicia valor de tiempoAnterior
   else if (estado == 2) {
-    win.stop();
     tiempoAnterior = millis();
+    
+    //Botón para reiniciar el juego
         for (var i4 = 0; i4 < touches.length; i4++) {
 
       if (touches[i4].x > 200 && touches[i4].x < 559) {
@@ -416,21 +481,25 @@ function touchStarted() {
   }
 
   //reiniciar el juego cuando ya se perdió
+  //reinicia valor de tiempoAnterior
   if (estado == 3) {
     estado = 0;
-    lose.stop();
     tiempoAnterior = millis();
   }
 
+  //Pasar de las instrucciones al nivel 3
+  //reinicia valor de tiempoAnterior
+  //suena un plop
   if (estado == 6) {
     estado = 7;
     tiempoAnterior = millis();
+    plop.play();
   }
 
-  //el tiempo del segundo clic se corre a la segunda posicion
+  //el tiempo del segundo toque se corre a la segunda posicion
   tiempo[0] = tiempo[1];
 
-  //se guarda el tiempo del primer clic en el arreglo
+  //se guarda el tiempo del primer toque en el arreglo
   tiempo[1] = millis();
 
 }
@@ -444,19 +513,19 @@ function comenzar() {
     return;
   }
 
-  //posicion actual del raton
+  //variables para la velocidad
   var x1 = 50;
   var y1 = 50;
 
-  //posicion anterior del raton
+  //variables para la velocidad
   var x2 = 50;
   var y2 = 50;
 
-  //la velocidad se mide restando la posicion guardada del mouse con la posición que se habia guardado de este
+  //velocidad
   var velx = x1 - x2;
   var vely = y1 - y2;
 
-  // se crea un nuevo Duque que recibe por parametro las velocidades en x y y del mouse
+  // se crea un nuevo Duque que recibe por parametro las velocidades
   duques[numDuques] = new presidente(velx, vely);
   //aumenta el numero de Duques de la lista
   numDuques++;
@@ -511,26 +580,24 @@ function bola() {
   //variable que indica si esta viva o muerta
   this.viva = true;
 
-  //variables de posicion, la bola se crea en una posicion aleatoria en X y Y
+  //variables de posicion, Uribe se crea en una posicion aleatoria en X y Y
   this.x = random(tam1 + 10, width);
   this.y = random(height);
 
-  //asigna valores de velocidad a la bola. aleatorios entre -2 y 2
+  //asigna valores de velocidad a Uribe. aleatorios entre -2 y 2
   this.velx = random(-2, 2);
   this.vely = random(-2, 2);
 
   //variable de tamano
   this.tam = 50;
 
-  //funcion que muestra la bola
+  //funcion que muestra a Uribe
   this.mostrar = function() {
     image(uribe, this.x, this.y, this.tam, this.tam);
   }
 
-  //funcion que mueve la bola
+  //funcion que mueve a Uribe
   this.mover = function() {
-
-    //solo se mueve si esta viva
 
     //el movimiento se asigna por la posicion + la velocidad
     this.x = this.x + this.velx;
