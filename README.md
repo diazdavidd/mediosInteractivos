@@ -10,4 +10,5 @@ Ejercicios de la clase diseño en medios interactivos
 8. [Ecosistema avanzado](https://diazdavidd.github.io/mediosInteractivos/08/)
 9. [Avances juego](https://diazdavidd.github.io/mediosInteractivos/09/)
 10. [Juego v01](https://diazdavidd.github.io/mediosInteractivos/10/)
-11. [Juego 12 Noviembre](https://diazdavidd.github.io/mediosInteractivos/11/)
+11. [Juego 12 Noviembre (GITHUB)](https://diazdavidd.github.io/mediosInteractivos/11/)
+12. [Juego 12 Noviembre (P5.JS Fullscreen)](https://editor.p5js.org/d.diazd/full/rkhUj-YiQ/)
