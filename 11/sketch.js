@@ -13,7 +13,11 @@ var bolas = []; //variable que guarda la lista de bolas
 var numBolas = 10; //numero de bolas creadas
 var miliseg = 0;
 var progressCount = 0;
-
+var himno;
+var fondo;
+var win;
+var lose;
+var lvlup;
 
 //Carga todas las imagenes antes de comenzar a dibujar
 function preload() {
@@ -26,9 +30,16 @@ function preload() {
   perdiste = loadImage('assets/perdiste1.png');
   nivel2 = loadImage('assets/nivel2.png');
   ganar = loadImage('assets/ganaste.png');
+  himno = loadSound('assets/himno.mp3');
+  fondo = loadSound('assets/fondo.mp3');
+  win = loadSound('assets/ganaste.mp3');
+  lose = loadSound('assets/perdiste.m4a');
+  plop = loadSound('assets/plop.m4a');
+  lvlup = loadSound('asset/level2.mp3');
 }
 
 function setup() {
+ 
 
   //Tamaño del canvas es el tamaño de ventana
   createCanvas(768, 1024); //crea un canvas de pantalla completa
@@ -75,13 +86,18 @@ function draw() {
 
   //Estado 0 que es la pantalla inicial, muestra instrucciones 
   if (estado == 0) {
+
 image(inicio,0,0,768,1024);
 x2 = 10;
 y2 = height/2;
 x = width / 2;
 y = height - 10;
   progressCount = 0;
+          if (himno.isPlaying() == false) {
+        himno.play(0);
+      } 
   }
+
 
 
   //Estado 1, acá comienza el juego 
@@ -90,6 +106,7 @@ y = height - 10;
     fill(255, 150);
     rect(0, 0, width, height);
     fill(0);
+    himno.pause();
     //Muestra el puntaje en pantalla
 text(progressCount, width / 2, height / 2.5);
     comenzar();
@@ -119,15 +136,22 @@ text(progressCount, width / 2, height / 2.5);
       if(progresos[i2].estaVivo != progresos[i2].estaVivoAntes){
          progressCount = progressCount + 1;
          progresos[i2].estaVivoAntes = progresos[i2].estaVivo;
+        	plop.play();
          }
       if (progressCount == 4){
       estado = 4; 
+        lvlup.play();
       }
 
     }
-
+if (fondo.isPlaying() == false) {
+        fondo.play();
+      } 
     //El estado 2 es cuando se gana
   } else if (estado == 2) {
+    if (win.isPlaying() == false) {
+        win.play();
+      } 
     //Resetea los valores de progresos para que se muestren de nuevo
     for (i2 = 0; i2 < 4; i2 = i2 + 1) {
     progresos[i2].estaVivoAntes = true;
@@ -138,12 +162,16 @@ text(progressCount, width / 2, height / 2.5);
   	progresos[i2].x = random(0, windowWidth);
   	progresos[i2].y = random(windowHeight - 200, windowHeight - 50);
      }
+    fondo.pause();
     //Resetea el conteo de progresos a 0
     progressCount = 0;
     //Imagen donde dice que se ganó
 	image(ganar,0,0,768,1024);
     //El estado 3 es cuando se pierde, si toca Duque a Colombia
   } else if (estado == 3) {
+        if (lose.isPlaying() == false) {
+        lose.play();
+      } 
     //Resetea los valores de progresos para que se muestren de nuevo
             for (i2 = 0; i2 < 4; i2 = i2 + 1) {
 		  progresos[i2].estaVivo = true;
@@ -157,6 +185,7 @@ text(progressCount, width / 2, height / 2.5);
     //Resetea el conteo de progresos a 0
     progressCount = 0;
     //Imagen de pérdida
+    fondo.pause();
 	image(perdiste,0,0,768,1024);
     
     //Reinicia los Uribes para que creen en otros lugares random
@@ -272,20 +301,24 @@ function touchStarted() {
   if (estado == 0) {
     estado = 1;
     tiempoAnterior1 = second();
+    himno.stop();
   } 
   //Pasar de las instrucciones al nivel 2 con un toque
   else if (estado == 4) {
     estado = 5;
     tiempoAnterior = millis();
+    plop.play();
   }
-  //Reiniciar el juego
+  //Reiniciar el juego cuando ganó
   else if (estado == 2) {
     estado = 0;
+    win.stop();
   }
   
   //reiniciar el juego cuando ya se perdió
   if (estado == 3) {
     estado = 0;
+    lose.stop();
   }
   
 
