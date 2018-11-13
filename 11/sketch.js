@@ -312,7 +312,7 @@ function draw() {
 		//Reinicia score
     miliseg = floor(millis() - tiempoAnterior);
 		//Condicional para pasar de nivel cuando el score llegue a 0
-    if (millis() - tiempoAnterior > 5000) {
+    if (millis() - tiempoAnterior > 4000) {
       estado = 3;
     }
     //Imagen de fondo
@@ -325,7 +325,7 @@ function draw() {
     noStroke();
     fill(255);
     //Tiempo restante para hacer que Colombia crezca
-    text('Tiempo restante: ' + (5000 - floor((millis() - tiempoAnterior))), width / 2, height / 4);
+    text('Tiempo restante: ' + (4000 - floor((millis() - tiempoAnterior))), width / 2, height / 4);
     //la velocidad de la bola se obtiene de la division de 60 segundos entre el intervalo de dos clics
     //tiempo[1] = tiempo en el que se hizo el primer toque
     //tiempo[0] = tiempo en el que se hizo el segundo toque
