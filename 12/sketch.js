@@ -27,7 +27,7 @@ var mtam; //variable para suavizar el tamaño de Colombia
 var cuentaPlay = 1; //Número de veces que se ha reproducido un sonido
 
 //Carga todas las imagenes antes de comenzar a dibujar
-function preload() {
+function preload() {e
   duque = loadImage('assets/duque.png');
   colombia = loadImage('assets/colombia.png');
   progresito = loadImage('assets/progreso.png');
@@ -917,12 +917,6 @@ function touchStarted() {
   //suena un plop
   if (estado == 6) {
     estado = 7;
-    tiempoAnterior = millis();
-    tiempoAnterio = second();
-    plop.play();
-  }
-    if (estado == 6) {
-    estado = 19;
     tiempoAnterior = millis();
     tiempoAnterio = second();
     plop.play();
