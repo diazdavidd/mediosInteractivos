@@ -40,7 +40,7 @@ function preload() {
   win = loadSound('assets/ganaste.mp3');
   lose = loadSound('assets/perdiste.m4a');
   plop = loadSound('assets/plop.m4a');
-  lvlup = loadSound('asset/level2.mp3');
+  lvlup = loadSound('assets/level2.mp3');
   nivel3 = loadImage('assets/nivel3.png')
 }
 
