@@ -276,7 +276,7 @@ function draw() {
     //Dibuja la imagen de Colombia
     fill(255,0,0);
     image(colombiared,x10,y10,tam1,tam1);
-    text('P1',x10,y10+tam1-2);
+    text('P2',x10,y10+tam1-2);
     fill(0);
     image(colombiared,x10,y10,tam1,tam1);
     //suma la velocidad en x y en y a Colombia
@@ -420,8 +420,10 @@ function draw() {
     text(miliseg, width / 2, height / 2);
 
     //Dibuja la imagen de Colombia
+	fill(0,0,255);
     image(colombia, x2, y2, tam1, tam1);
     text('P1',x2,y2+tam1-2);
+	  fill(255);
 
 
     //llama a las funciones mostrar y mover de cada una de las bolas en la lista
@@ -483,8 +485,10 @@ function draw() {
     text(miliseg1, width / 2, height / 2);
 
     //Dibuja la imagen de Colombia
+	  fill(255,0,0);
     image(colombiared, x2, y2, tam1, tam1);
     text('P2',x2,y2+tam1-2);
+	  fill(255);
 
 
     //llama a las funciones mostrar y mover de cada una de las bolas en la lista
